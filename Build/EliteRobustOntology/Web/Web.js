@@ -1,6 +1,6 @@
 const NOVASTART=()=>{
 
-    APPMODE('#333333')
+    APPMODE('#333333');
 
     ROUTE('',HOMEPAGE,HOMEPAGE);
 
