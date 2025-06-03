@@ -215,3 +215,81 @@ const POWERUS=()=>{
     WEBSITE('https://eroinnovations.site');
 
 };
+
+const CONTACTUSPAGEROUTER=()=>{
+
+    ROUTE(' ',CONTACTUSPAGE,'HOMEPAGE');
+
+};
+
+const CONTACTUSPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <div id='HeaderHolder' class='TopNav'>
+
+                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+                <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
+
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
+
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEPHONEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1>Donate</h1>
+            
+            </div>
+
+        </header>
+
+        <div class='ScrollDiv'>
+
+            <br>
+
+            <h1>Fill the Form Below</h1>
+
+            <br>
+
+            <input class='RoundInput' placeholder='Enter Your Name'/>
+
+            <input class='RoundInput' placeholder='Enter Your Email'/>
+
+            <textarea placeholder='Compose Your Message'></textarea>
+
+            <button class='SendButton'>Send Message</button>
+
+            <br><br>
+
+            <h3>OR</h3>
+
+            <br>
+
+            <div id='ContactHolder' class='TopNav'>
+
+                <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+            
+            </div>
+
+            <br><br>
+
+            <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+            <br>
+
+        </div>
+
+    `);
+
+};
