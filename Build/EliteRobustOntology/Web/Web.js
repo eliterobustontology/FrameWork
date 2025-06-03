@@ -10,7 +10,15 @@ const HOMEPAGE=()=>{
 
     DISPLAY('',`
         
-        <h1>Under Development</h1>
+        <header>
+
+            <img class='LeftIcon' src='https://eroinnovations.github.io/FrameWork/Library/Assets/Images/Posts/Elite/CompanyLogo.png'/>
+
+            <p>Elite Robust Ontology</p>
+
+            <img class='RightIcon' src='${WHITEMENUICON}'/>
+        
+        </header>
         
     `);
 
