@@ -175,13 +175,13 @@ const SERVICESPAGE=()=>{
             
             </div>
 
-            <p class='BriefIntro'>Community Rise Ventures ventures in multiple activities to be able to improve the life of a common person from daily standard to funded projects</p>
+            <p class='BriefIntro'>Community Rise Ventures aids in multiple activities to be able to improve the life of a common person from daily standard to funded projects</p>
 
             <br>
 
             <h1>Religious Centers Constructions</h1>
 
-            <p class='BriefIntro'>Community Rise Ventures in Construction of Mosques and Churchs that is aimed at helping improve the spirtual to the Creator thus install discipline to the people of the community.Below is a image of Community Rise Ventures Team Constructing a mosque.</p>
+            <p class='BriefIntro'>Community Rise Ventures enables to improve religionous immunity of locals by the  Construction of Mosques and Churchs that is aimed at helping improve the spirtual Life of and strong connection betwwen Man and the Creator thus install discipline to the people of the community.Below is an image of Community Rise Ventures Team Constructing a mosque.</p>
 
             <img class='Logo'  src='https://th.bing.com/th/id/OIP.ytXiN8ruvK0E_rwZ_68OHgHaEL?w=328&h=185&c=7&r=0&o=5&cb=iwc2&pid=1.7'/>
 
