@@ -1,28 +1,16 @@
-const API='https://docs.google.com/spreadsheets/d/15BPlgHpUmm65nUNSLRwlRzaWv1hPenriWVvL5MDcmiw/edit?usp=sharing';
-
-const COMMUNITYRISELOGO='https://eroinnovations.github.io/FrameWork/Library/Assets/Images/Posts/CommunityRise/Logo.jpg';
+const URL='https://docs.google.com/spreadsheets/d/1x_Nruw60vwcWJKkMUWpNncGzQSoPgHoMP2X8so3eS8I/edit?usp=sharing';
 
 const NOVASTART=()=>{
 
-    APPMODE('Purple');
-
-    VISITOR(API,'Visitors');
+    APPMODE('#ffffff');
+    
+    VISITOR(URL,'Users');
 
     ROUTE('',HOMEPAGE,'HOMEPAGE');
 
-    DOWNLOADSAVEINDEX(API,'News','News',()=>{
-
-        ROUTE('',HOMEPAGE,'HOMEPAGE');
-
-    });
-
 };
 
-const HOMEPAGEROUTE=()=>{
-
-    DOWNLOADSAVEINDEX(API,'News','News',()=>{
-
-    });
+const HOMEPAGEROUTER=()=>{
 
     ROUTE('',HOMEPAGE,'HOMEPAGE');
 
@@ -32,377 +20,420 @@ const HOMEPAGE=()=>{
 
     DISPLAY('',`
 
-        <div class='HomeDiv'>
+        <header>
+
+            <div id='HeaderHolder' class='TopNav'>
+
+                <img id='Logo' class='LeftIcon' src='https://ashshakurcharity.org/Assets/logo.jpg'/>
         
-            <img class='Logo' src='https://eroinnovations.github.io/FrameWork/Library/Assets/Images/Posts/CommunityRise/Logo.jpg'/>
-            
-            <div class='TopNav'>
-            
-                <p onclick='SERVICESPAGEROUTE()'>Services</p>
+                <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
 
-                <p onclick='ABOUTPAGEROUTE()'>About</p>
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
 
-                <p onclick='DONATEPAGEROUTE()'>Donate</p>
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEMENUICON}"/>
 
-                <p onclick='CONTACTUSPAGEROUTE()'>Contact</p>
+                <img id='MenuClose' onclick='MENUCLOSE()' class="RightIcon" src="${WHITECLOSEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1 class='DonateWord'>Donate</h1>
             
             </div>
 
-            <h1>History</h1>
+        </header>
 
-            <p class='BriefIntro'>Community Rise Ventures is a Non Government Funded Organisation that is Responsible and Loves it Community,We Venture in helping the needy and try to resolve community issue without interfering with government projects.</p>
+        <div class='ScrollDiv'>
+
+            <div class='TopNav' id='Menu' >
+
+                <p>About Us</p>
+
+                <p onclick='PROJECTPAGEROUTER()'>Our Projects</p>
+
+                <p onclick='CONTACTUSPAGEROUTER()'>Contact Us</p>
+
+            </div>
+
+            <div class='MainImage'>
         
-            <p class='BriefIntro'>We are Located in Mbale City in Kasanvu ,near Mbale College.</p>
+                <img src='https://ashshakurcharity.org/Assets/waterwells/waterwellmain.jpg'/>
 
-            <h1>Our Projects</h1>
+                <footer class='MainFooter'>
 
-            <p class='BriefIntro'>Community Rise Ventures being a Non Government Funded Organisation and Registered,The Funds that run and act as daily support for our organisation inorder to for us to continue to support the community is from your donations and we do wish to show the good hearted people where there donations good thus we post the archievements of our organisation and how far they have come to support the community and if you wish become part of the supporters for a good cause to humanit,please donate to us from the donation section of the site.</p>
-
-            <h3>See Them Below</h3>
-
-            <div class='ProjectDIv'></div>
-
-        </div>
-    `);
-
-    const ProjectDIv=document.querySelector('.ProjectDIv');
-
-    GETINDEXEDDATA('News','News',(data)=>{
-
-        CREATEELEMENT(ProjectDIv,'div','ProjectedDiv',(ELEMENT)=>{
-
-            DISPLAY(ELEMENT,`
-
-                <img class='ProjectedImage' src='${data.ImageOne}'/>
-
-                <footer class='ProjectedFooter'>
-
-                    <h1 class='ProjectedTitle'>${data.Name}</h1>
+                    <p class='Message'>Our Prophet Muhammed is reported to have said ,"<b class='SubMessage'>The Best Form of Charity is to give someone water to drink.</b> "</p>
                 
                 </footer>
-                
-            `);
+        
+            </div>
 
-            CLICK(ELEMENT,()=>{
+            <br><br>
 
-                JSONIFICATION(data,(MyData)=>{
+            <h1>With Regards</h1>
 
-                    STOREDATA('','MyPosts',MyData);
+            <br>
 
-                    STORYPAGEROUTE();
+            <p class='LeftText'>Ash Shakur Charity and orphanage aid is a nonprofit organization dedicated to transforming lives by addressing the needs of orphans, underprevileged children, and vulnerable communities. With a mission to provide access to water and sanitation, food and clothing, Qurbani and aqeeqa, Ramadan programs, education, healthcareand shelter, we aim to create sustainable solutions that empower individuals and fosterhope.</p>
 
-                });
+            <br>
 
-            });
+            <p class='LeftText'>Since our inception, we have encouted countless lives through provideing education, supporting healthcare initiatives, and providing safe havns to those in need. Every donation and volunteer efforts brings closer to a word where every child has the opportunity to thrive.</p>
 
-        });
+            <br>
+
+            <h1 class='Season'>QURBAN</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage'  src='https://ashshakurcharity.org/Assets/Quraban/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>It is neither their meat nor their bolld that reaches Allah but it is piety from you that reaches Him.</p>
+
+            <br><br>
+
+            <h1 class='Season'>HOT MEAL</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img onclick='HOTMEAL()' class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Every Child Deserves a full plate</p>
+
+            <br><br>
+
+            <h1 class='Season'>FOOD PACKS</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Distributing food packs to combat hunger to the most needy families and vulunerable communities.</p>
+
+            <br><br>
+
+            <h1 class='Season'>MOSQUE CONSTRUCTION</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Whoever builds a mosque, Allah builds for him/her a house in Paradise.</p>
+
+            <br><br>
+
+            <h1 class='Season'>QURAN DISTRIBUTION</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img onclick='QURANDISTRIBUTION()' class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Sharing Quran is swadaqatul-jariya in which whoever gives one receives a reward from whenever someone recites it.</p>
+
+            <br><br>
+
+            <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+            <br>
+        
+        </div>
+
+    `);
+
+};
+
+const HOTMEAL=()=>{
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
+
+    STOREDATA('','Title','Every child deserves a full plate');
+
+    STOREDATA('','Story',`Peoples lives are in grave risk as a result of food shortage and poverty, especially in those who are occupied in areas of large populations while others are forced to eat grass and others starve to death. Malnutrition makes differnt individuals more pronr to illness and less able to recover from accidents, which creates a circle of mortality that seems to never end.
+
+We as a team having realised this as a difficulty we come to provide a meal to those who can not have two meals a day to ensure they have somthing in their stomachs to keep smiling faces as well as saving lives with your geneous donations.
+
+Together we can save humanity.`);
+
+    STOREDATA('','ProjectName','Quran Distribution');
+
+    STOREDATA('','SubTitle','He is not a believer whose stomach is filled while the neighbour to his side goes hungry.');
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
+};
+
+const QURANDISTRIBUTION=()=>{
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
+
+    STOREDATA('','Title','Sharing Quran is swadaqatul-jariya in which whoever gives one receives a reward from whenever someone recites it.');
+
+    STOREDATA('','Story',`Whoever recites a letter from the Quran receives the reward of a good deed and each good deed is worth ten goods and therefore it is a sadaqah jariyah for the donator that he/she receives rewards too whenever the same Quran donated is recited.Quran distribution is at the heart of our charity's mission. As muslims muslims, that sharing the Quran is one of the most valuable and rewarding acts of worship. we distribute copies of Quran to different madrasa Schools and mosques where they are limited.This enables every individual to accesss the message from Allah to human .`);
+
+    STOREDATA('','ProjectName','Quran Distribution');
+
+    STOREDATA('','SubTitle','Share swadaqatul jariyah');
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
+};
+
+const MENUOPEN=()=>{
+
+    var MENU=NAMING('#MenuOpen');
+
+    var MENUCLOSER=NAMING('#MenuClose');
+
+    var MENUDRAWER=NAMING('#Menu');
+
+    CLICK(MENU,()=>{
+
+        STYLED(MENUDRAWER,'display','inline-flex');
+
+        STYLED(MENUCLOSER,'display','block');
+
+        STYLED(MENU,'display','none');
 
     });
 
 };
 
-const DONATEPAGEROUTE=()=>{
+const MENUCLOSE=()=>{
 
-    ROUTE(' ',DONATEPAGE,'HOMEPAGE');
+    var MENU=NAMING('#MenuOpen');
 
+    var MENUCLOSER=NAMING('#MenuClose');
+
+    var MENUDRAWER=NAMING('#Menu');
+
+    CLICK(MENUCLOSER,()=>{
+
+        STYLED(MENUDRAWER,'display','none');
+
+        STYLED(MENUCLOSER,'display','none');
+
+        STYLED(MENU,'display','block');
+
+    });
+ 
 };
 
-const DONATEPAGE=()=>{
-
-    DISPLAY('',`
-
-        <div class='HomeDiv'>
-
-            <img class='Logo' src='${COMMUNITYRISELOGO}'/>
-
-            <div class='TopNav'>
-
-                <img onclick='HOMEPAGEROUTE()' class='LeftIcon' src='${WHITELEFTBACKICON}'/>
-
-                <h3 class='RightText'>Donate</h3>
-            
-            </div>
-
-            <h1>FundRaising</h1>
-
-            <p class='BriefIntro'>Community Rise Ventures Being a Non Government Funded Organisation,We There Operate Our Projects Using the Donation Funds Provided by The good well to keep the Community Projects Runnings.<br><br> Those interested in being a good cause for the needy please donate to the Following Account Below.</p>
-
-            <h1>Account Details</h1>
-            
-            <div class='TopNav'>
-
-                <h1 class='LeftText'>Account Number</h1>
-
-                <h1 class='RightText'>60080462400</h1>
-            
-            </div>
-
-            <div class='TopNav'>
-
-                <h1 class='LeftText'>Bank Name</h1>
-
-                <h1 class='RightText'>Absa</h1>
-            
-            </div>
-
-            <br><br>
-
-        </div>
-
-    `);
-
-};
-
-const SERVICESPAGEROUTE=()=>{
-   
-    ROUTE(' ',SERVICESPAGE,'HOMEPAGE');
-    
-};
-
-const SERVICESPAGE=()=>{
-
-    DISPLAY('',`
-
-        <div class='HomeDiv'>
-
-            <img class='Logo' src='${COMMUNITYRISELOGO}'/>
-
-            <div class='TopNav'>
-
-                <img onclick='HOMEPAGEROUTE()' class='LeftIcon' src='${WHITELEFTBACKICON}'/>
-
-                <h3 class='RightText'>Services</h3>
-            
-            </div>
-
-            <p class='BriefIntro'>Community Rise Ventures ventures in multiple activities to be able to improve the life of a common person from daily standard to funded projects</p>
-
-            <br>
-
-            <h1>Religious Centers Constructions</h1>
-
-            <p class='BriefIntro'>Community Rise Ventures in Construction of Mosques and Churchs that is aimed at helping improve the spirtual to the Creator thus install discipline to the people of the community.Below is a image of Community Rise Ventures Team Constructing a mosque.</p>
-
-            <img class='Logo'  src='https://th.bing.com/th/id/OIP.ytXiN8ruvK0E_rwZ_68OHgHaEL?w=328&h=185&c=7&r=0&o=5&cb=iwc2&pid=1.7'/>
-
-            <br><br>
-
-            <h1>Safe Water Delivery</h1>
-
-            <p class='BriefIntro'>Community Rise Ventures provides safe Drinking Water to hard to reach areas without safe drinking water and we do this by well constructions and this enables us to prevent and reduces illness in those communities we venture in as shown below</p>
-
-
-            <img class='Logo' src='https://live.staticflickr.com/7412/27493158034_f6139a70c4_b.jpg'/>
-
-            <br><br>
-
-            <h1>Sheltering the Homeless</h1>
-
-            <p class='BriefIntro'>Community Rise Venture also ventures in reducing the rate of homeless and street kids and we do this by construction of orphanages to enable us improve the daily life of a common person.</p>
-
-            <img class='Logo' src=https://th.bing.com/th/id/OIP.ocB3_eXSP4LZmJCrs_JHXQHaDt?cb=iwc2&rs=1&pid=ImgDetMain' />
-
-            <br><br>
-
-            <h1>Feeding the Needy</h1>
-
-            <p class='BriefIntro'>Community Rise Ventures also is trying to solve the issue of starvation by Feeding those who are unable to get daily needs for there daily survival as seen below.</p>
-
-            <img class='Logo' src='https://th.bing.com/th/id/R.f8b5df9bd938e906d4ef8e717e700a7d?rik=TBWioBHpwYl1Rg&pid=ImgRaw&r=0'/>
-
-           <br><br>
-
-            <h1>Cloth the Needy</h1> 
-
-            <p class='BriefIntro'>Community Rise Ventures also provides basic needs for the survivial of those in need as presented below</p>
-
-            <img class='Logo' src='https://www.globalgiving.org/pfil/12617/ph_12617_43123.jpg'/>
-
-            <br><br>
-
-            <h1>Health the Needy</h1> 
-
-            <p class='BriefIntro'>Community Rise Ventures also provides health needs to those who are unable to get them because of unmentioned conditions thus we try our best to make their life simple and comfortable as demonstrated below</p>
-
-            <img class='Logo' src='https://4.bp.blogspot.com/-BggcsQALZ8I/UVQmRuR3ElI/AAAAAAAABcU/8TWrWFTztx8/s1600/Week+29+-+Wheelchairs+056.jpg'/>
-
-        </div>
-
-    `);
-
-};
-
-const ABOUTPAGEROUTE=()=>{
-   
-    ROUTE(' ',ABOUTPAGE,'HOMEPAGE');
-    
-};
-
-const ABOUTPAGE=()=>{
-
-    DISPLAY('',`
-
-        <div class='HomeDiv'>
-
-            <img class='Logo' src='${COMMUNITYRISELOGO}'/>
-
-            <div class='TopNav'>
-
-                <img onclick='HOMEPAGEROUTE()' class='LeftIcon' src='${WHITELEFTBACKICON}'/>
-
-                <h3 class='RightText'>About Us</h3>
-            
-            </div>
-
-            <h1>Who We are?</h1>
-
-            <p class='BriefIntro'>Community Rise Ventures is a non government Funded Organisation that is aimed at creating Smiles on the Faces of the Community we venture to help those in need by creating long term solutions without interfering in government projects and we venture in service delivery as shown in services section of this site.</p>
-
-
-            <h1>Where are We?</h1>
-
-            <p class='BriefIntro'>We are located in kasanvu in Mbale City near Mbale College.</p>
-
-            <h1>Our Mission</h1>
-
-            <p class='BriefIntro'>Our Mission is to Create a smile on everyones face who is inndeed needy by solving the challenges with the aid of those willing to support.</p>
-
-            <br><br>
-
-        </div>
-
-    `);
-
-};
-
-const CONTACTUSPAGEROUTE=()=>{
-   
-    ROUTE(' ',CONTACTPAGE,'HOMEPAGE');
-    
-};
-
-const CONTACTPAGE=()=>{
-
-    DISPLAY('',`
-
-        <div class='HomeDiv'>
-
-            <img class='Logo' src='${COMMUNITYRISELOGO}'/>
-
-            <div class='TopNav'>
-
-                <img onclick='HOMEPAGEROUTE()' class='LeftIcon' src='${WHITELEFTBACKICON}'/>
-
-                <h3 class='RightText'>Contact Us</h3>
-            
-            </div>
-
-            <h3>Reach Us Today</h3>
-
-            <button onclick='INSTAGRAMED()'>Instagram</button>
-
-            <button onclick='WHATED()'>WhatsApp</button>
-
-            <button onclick='FACED()'>Facebook</button>
-
-            <button onclick='TIK()'>TikTok</button>
-
-            <button onclick='EMAILED()' >Email</button>
-
-            <button onclick='ED()' >X</button>
-
-            <h1>Tech Support</h1>
-
-            <button onclick='WEBSITED()'>Site</button>
-
-            <br><br>
-
-            <p>Powered By Elite Robust Ontology.</p>
-
-            <br><br>
-
-        </div>
-
-    `);
-};
-
-const WEBSITED=()=>{
+const POWERUS=()=>{
 
     WEBSITE('https://eroinnovations.site');
 
 };
 
-const INSTAGRAMED=()=>{
+const CONTACTUSPAGEROUTER=()=>{
 
-    INSTAGRAM('community_rise_ventures');
+    ROUTE(' ',CONTACTUSPAGE,'HOMEPAGE');
 
 };
 
-const WHATED=()=>{
-    WHATSAPP('0779332496');
+const CONTACTUSPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <div id='HeaderHolder' class='TopNav'>
+
+                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+                <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
+
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
+
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEPHONEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1 class='DonateWord'>Donate</h1>
+            
+            </div>
+
+        </header>
+
+        <div class='ScrollDiv'>
+
+            <br>
+
+            <h1>Fill the Form Below</h1>
+
+            <br>
+
+            <input class='RoundInput' placeholder='Enter Your Name'/>
+
+            <input class='RoundInput' placeholder='Enter Your Email'/>
+
+            <textarea placeholder='Compose Your Message'></textarea>
+
+            <button class='SendButton'>Send Message</button>
+
+            <br><br>
+
+            <h3>OR</h3>
+
+            <br>
+
+            <div id='ContactHolder' class='TopNav'>
+
+                <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+            
+            </div>
+
+            <br><br>
+
+            <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+            <br>
+
+        </div>
+
+    `);
+
 };
 
-const FACED=()=>{
-    WEBSITE('https://www.facebook.com/share/gGoc7h3UY95qyPvU/?mibextid=wwXIfr');
+const CALLUS=()=>{
+
+    CALL('+256705665894');
+
 };
 
-const TIK=()=>{
-    WEBSITE('https://www.tiktok.com/@communityriseventures?_t=8sJKl4UAph2&_r=1');
+const EMAILUS=()=>{
+
+    GMAIL('ashshakurcharityandorphanageai@gmail.com');
+
 };
 
-const ED=()=>{
-    WEBSITE('https://x.com/communityriseve?s=11');
+const WHATSAPPUS=()=>{
+
+    WEBSITE('https://wa.me/256789467876');
+
 };
 
+const INSTAGRAMUS=()=>{
 
-const EMAILED=()=>{
-    GMAIL('Communityriseventures@gmail.com');
-}
+    WEBSITE('https://www.instagram.com/ash_shakur_charity_?igsh=ZXlrMmNqc3poYTh6');
 
-const STORYPAGEROUTE=()=>{
-   
-    ROUTE(' ',STORYPAGE,'HOMEPAGE');
-    
 };
 
-const STORYPAGE=()=>{
+const FACEBOOKUS=()=>{
 
-    SESSIONDEJSONDATA('MyPosts',(data)=>{
+    WEBSITE('https://www.facebook.com/profile.php?id=100080811854731&mibextid=ZbWKwL');
 
-        console.log(data)
+};
 
-        DISPLAY('',`
-    
-            <div class='HomeDiv'>
-    
-                <img class='Logo' src='${data.ImageOne}'/>
-    
-                <div class='TopNav'>
-    
-                    <img onclick='HOMEPAGEROUTE()' class='LeftIcon' src='${WHITELEFTBACKICON}'/>
-    
-                    <h3 class='RightText'>${data.Name}</h3>
-                
-                </div>
+const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
-                <p class='BriefIntro'>${data.Story}</p>
+    DISPLAY('',`
 
-                <div class='ImagesHolders'>
+        <header>
 
-                    <img class='StoryImage' src='${data.ImageOne||COMMUNITYRISELOGO}'/>
+            <div id='HeaderHolder' class='TopNav'>
 
-                    <img class='StoryImage'  src='${data.ImageTwo||COMMUNITYRISELOGO}'/>
+                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+                <h1 class='CompanyName'>${sessionStorage.getItem('ProjectName')}</h1>
 
-                    <img class='StoryImage' src='${data.ImageThree||COMMUNITYRISELOGO}'/>
-                
-                </div>
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
+
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEPHONEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1 class='DonateWord'>Donate</h1>
+            
+            </div>
+
+        </header>
+
+        <div class='ScrollDiv'>
+
+            <br>
+
+            <div id='BorderButton' class='SlideDiv'>
+
+                <br>
+
+                <img id='MidImage' class='QurabanImage' src='${sessionStorage.getItem('Image')}'/>
 
                 <br><br>
-    
-            </div>
-    
-        `);
 
-    });
+                <h3>${sessionStorage.getItem('Title')}</h3>
+
+                <br><br>
+
+                <button class='SmallDonate'>Donate</button>
+            
+            </div>
+
+            <br>
+
+            <h1>${sessionStorage.getItem('SubTitle')}</h1>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>${sessionStorage.getItem('Story')}</p>
+
+            <br><br>
+
+            <div id='ContactHolder' class='TopNav'>
+
+                <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+            
+            </div>
+
+            <br><br>
+
+        </div>
+
+    `);
 
 };
