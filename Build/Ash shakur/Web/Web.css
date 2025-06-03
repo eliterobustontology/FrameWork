@@ -1,0 +1,98 @@
+header{
+    background: forestgreen;
+    height: 150px;
+    display: block;
+}
+
+#HeaderHolder{
+    width: 100%;
+    height: 100px;
+}
+
+#Logo{
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+}
+
+.CompanyName{
+    color: #ffffff;
+    font-size: 20px;
+    width: 60%;
+}
+
+.Motto{
+    position: absolute;
+    color: white;
+    bottom: 5%;
+    left: 25%;
+    font-size: 12px;
+}
+
+#DonateSection{
+    background: gray;
+}
+
+.PoweringCompany{
+    color: forestgreen;
+    font-size: 18px;
+}
+
+.ScrollDiv{
+    top: 150px;
+    height: auto;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+#Menu{
+   background: transparent;
+   display: none;
+}
+
+#MenuClose{
+    display: none;
+}
+
+.MainImage{
+    position: relative;
+    height: auto;
+    width: 95%;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+
+.Season{
+    font-size: 30px;
+    border: 1px solid #cdcdcd50;
+    width: 90%;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.MainFooter{
+    background: #00000080;
+    height: 50%;
+}
+
+.Message{
+    color: #ffffff;
+}
+
+.SubMessage{
+    color: #ffffff;
+}
+
+.SlideDiv{
+    position: relative;
+    height: 300px;
+    background: transparent;
+}
+
+#QuraBanMessage{
+    padding: 0 10%;
+}
+
+.QurabanImage{
+    object-fit: contain;
+}
