@@ -195,7 +195,7 @@ const QURBAN=()=>{
     <p class='LeftText'>We called to him "O Ibrahim , you have fulfilled the vision. Indeed we thus reward the doers of good,this was a clear trial."Qur'an(37:104)</p>
     <p class='LeftText'>A single qurbani donation can provide nutrious meals ,and supply protein-filled meat to where iyts most throughout the year.</p>
     <br>
-    <h3>Who is Qurbani compulsory for?></h3>
+    <h3>Who is Qurbani compulsory for?</h3>
     <br>
     <p class='LeftText'>Qurbani holds a special place in Islam. Its importance is stressed upon the qur'an and it serves as a reminder of prophet Ibrahim(AS) devotion and obedience.</p>
     <p class='LeftText'>According to many scholars, Qurbani is an obligation for all muslims whose wealth reaches the zakat threshold. Despite this, its critical role within Islam is often missed, resulting in tremendous baraka being lost.</p>
