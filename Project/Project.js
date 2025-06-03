@@ -120,7 +120,7 @@ const HOMEPAGE=()=>{
 
             <div class='SlideDiv'>
 
-                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+                <img onclick='FOODPACK()' class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
             
             </div>
 
@@ -237,6 +237,30 @@ const HOTMEAL=()=>{
     STOREDATA('','ProjectName','Hot Meal');
 
     STOREDATA('','SubTitle','He is not a believer whose stomach is filled while the neighbour to his side goes hungry.');
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
+};
+
+const FOODPACK=()=>{
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
+
+    STOREDATA('','Title','Distributing food packs to combat hunger to the to most needy families and vulnerable communities');
+
+    STOREDATA('','Story',`<p class='LeftText'>Contribute towards providing a vulnerable family foodpack to support a needy family with food every month for a halt year.
+    <br><br>
+    Over 733million people are unciernourished worldwide, with one in eleven facing the reality of extreme hunger and poverty!
+    <br><br>
+    Here at Ash shakur Charity and Orphanage Aid, We believe that no one should go hungry thats we are on a mission to feed our world withyour support, we have fed a mast of the vulnerable people in some of most poverty sticken areas.
+    <br><br>
+    As we relish the mast nutrious foods on our tables,due gratitude to Allah, we must externd far beyond thanking Him, we must ensure that all His creations are well fed too as stated in surah Al-Insan(76:8),The rightious are those who give food motivated solely by their love for Allah"SWT, to the poor, the orphans and the captive seeking His pleasure alone without expectation of reward or thanks"
+    <br>
+    Let us embrace the opportunity to please Allah(SWT) by extending our hands in charity and support those in need. By participating in hunger relief efforts, we not only fulfill oour religiousduty but also demonstrate compassion and solidarity with our brothers and sisters facing food insecurity.</p>`);
+
+    STOREDATA('','ProjectName','Food Pack');
+
+    STOREDATA('','SubTitle','Prophet Muhammad said;\'If a muslim feeds a hungry ,Allah will feed him with the fruits of paradise on the day of Judgement');
 
     ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
     
@@ -466,7 +490,7 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
             <p id='QuraBanMessage' class='CenterText'>${sessionStorage.getItem('Story')}</p>
 
-            <br><br>
+            <br>
 
             <div id='ContactHolder' class='TopNav'>
 
