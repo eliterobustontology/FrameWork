@@ -120,7 +120,7 @@ const HOMEPAGE=()=>{
 
             <div class='SlideDiv'>
 
-                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+                <img onclick='FOODPACK()' class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
             
             </div>
 
@@ -253,6 +253,26 @@ const QURANDISTRIBUTION=()=>{
     STOREDATA('','ProjectName','Quran Distribution');
 
     STOREDATA('','SubTitle','Share swadaqatul jariyah');
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
+};
+
+const FOODPACK=()=>{
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
+
+    STOREDATA('','Title','Every child deserves a full plate');
+
+    STOREDATA('','Story',`<p class='LeftText'>Peoples lives are in grave risk as a result of food shortage and poverty, especially in those who are occupied in areas of large populations while others are forced to eat grass and others starve to death. Malnutrition makes differnt individuals more pronr to illness and less able to recover from accidents, which creates a circle of mortality that seems to never end.
+    <br><br>
+    We as a team having realised this as a difficulty we come to provide a meal to those who can not have two meals a day to ensure they have somthing in their stomachs to keep smiling faces as well as saving lives with your geneous donations.</p>
+    <br><br>
+    <h1>Together we can save humanity.</h1>`);
+
+    STOREDATA('','ProjectName','Hot Meal');
+
+    STOREDATA('','SubTitle','He is not a believer whose stomach is filled while the neighbour to his side goes hungry.');
 
     ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
     
