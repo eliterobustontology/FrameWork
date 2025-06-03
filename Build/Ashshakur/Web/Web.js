@@ -142,7 +142,7 @@ const HOMEPAGE=()=>{
 
             <br>
 
-            <p id='QuraBanMessage' class='CenterText'>Distributing food packs to combat hunger to the most needy families and vulunerable communities.</p>
+            <p id='QuraBanMessage' class='CenterText'>Whoever builds a mosque, Allah builds for him/her a house in Paradise.</p>
 
             <br><br>
 
