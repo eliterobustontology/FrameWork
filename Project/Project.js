@@ -234,7 +234,7 @@ const HOTMEAL=()=>{
     <br><br>
     <h1>Together we can save humanity.</h1>`);
 
-    STOREDATA('','ProjectName','Quran Distribution');
+    STOREDATA('','ProjectName','Hot Meal');
 
     STOREDATA('','SubTitle','He is not a believer whose stomach is filled while the neighbour to his side goes hungry.');
 
