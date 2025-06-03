@@ -104,7 +104,7 @@ const HOMEPAGE=()=>{
 
             <div class='SlideDiv'>
 
-                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+                <img onclick='HOTMEAL()' class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
             
             </div>
 
@@ -152,13 +152,13 @@ const HOMEPAGE=()=>{
 
             <div class='SlideDiv'>
 
-                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+                <img onclick='QURANDISTRIBUTION()' class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
             
             </div>
 
             <br>
 
-            <p id='QuraBanMessage' class='CenterText'>Distributing food packs to combat hunger to the most needy families and vulunerable communities.</p>
+            <p id='QuraBanMessage' class='CenterText'>Sharing Quran is swadaqatul-jariya in which whoever gives one receives a reward from whenever someone recites it.</p>
 
             <br><br>
 
@@ -170,6 +170,42 @@ const HOMEPAGE=()=>{
 
     `);
 
+};
+
+const HOTMEAL=()=>{
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
+
+    STOREDATA('','Title','Every child deserves a full plate');
+
+    STOREDATA('','Story',`Peoples lives are in grave risk as a result of food shortage and poverty, especially in those who are occupied in areas of large populations while others are forced to eat grass and others starve to death. Malnutrition makes differnt individuals more pronr to illness and less able to recover from accidents, which creates a circle of mortality that seems to never end.
+
+We as a team having realised this as a difficulty we come to provide a meal to those who can not have two meals a day to ensure they have somthing in their stomachs to keep smiling faces as well as saving lives with your geneous donations.
+
+Together we can save humanity.`);
+
+    STOREDATA('','ProjectName','Quran Distribution');
+
+    STOREDATA('','SubTitle','He is not a believer whose stomach is filled while the neighbour to his side goes hungry.');
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
+};
+
+const QURANDISTRIBUTION=()=>{
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
+
+    STOREDATA('','Title','Sharing Quran is swadaqatul-jariya in which whoever gives one receives a reward from whenever someone recites it.');
+
+    STOREDATA('','Story',`Whoever recites a letter from the Quran receives the reward of a good deed and each good deed is worth ten goods and therefore it is a sadaqah jariyah for the donator that he/she receives rewards too whenever the same Quran donated is recited.Quran distribution is at the heart of our charity's mission. As muslims muslims, that sharing the Quran is one of the most valuable and rewarding acts of worship. we distribute copies of Quran to different madrasa Schools and mosques where they are limited.This enables every individual to accesss the message from Allah to human .`);
+
+    STOREDATA('','ProjectName','Quran Distribution');
+
+    STOREDATA('','SubTitle','Share swadaqatul jariyah');
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
 };
 
 const MENUOPEN=()=>{
@@ -323,5 +359,81 @@ const INSTAGRAMUS=()=>{
 const FACEBOOKUS=()=>{
 
     WEBSITE('https://www.facebook.com/profile.php?id=100080811854731&mibextid=ZbWKwL');
+
+};
+
+const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <div id='HeaderHolder' class='TopNav'>
+
+                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+                <h1 class='CompanyName'>${sessionStorage.getItem('ProjectName')}</h1>
+
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
+
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEPHONEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1 class='DonateWord'>Donate</h1>
+            
+            </div>
+
+        </header>
+
+        <div class='ScrollDiv'>
+
+            <br>
+
+            <div id='BorderButton' class='SlideDiv'>
+
+                <br>
+
+                <img id='MidImage' class='QurabanImage' src='${sessionStorage.getItem('Image')}'/>
+
+                <br><br>
+
+                <h3>${sessionStorage.getItem('Title')}</h3>
+
+                <br><br>
+
+                <button class='SmallDonate'>Donate</button>
+            
+            </div>
+
+            <br>
+
+            <h1>${sessionStorage.getItem('SubTitle')}</h1>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>${sessionStorage.getItem('Story')}</p>
+
+            <br><br>
+
+            <div id='ContactHolder' class='TopNav'>
+
+                <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+            
+            </div>
+
+            <br><br>
+
+        </div>
+
+    `);
 
 };

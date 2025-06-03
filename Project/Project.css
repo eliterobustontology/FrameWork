@@ -1,5 +1,5 @@
 header{
-    background: forestgreen;
+    background: transparent;
     height: 150px;
     display: block;
 }
@@ -7,6 +7,7 @@ header{
 #HeaderHolder{
     width: 100%;
     height: 100px;
+    background: forestgreen;
 }
 
 #Logo{
@@ -31,6 +32,8 @@ header{
 
 #DonateSection{
     background: gray;
+    margin-top: 1%;
+    height: 40px;
 }
 
 .DonateWord{
