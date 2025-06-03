@@ -293,3 +293,33 @@ const CONTACTUSPAGE=()=>{
     `);
 
 };
+
+const CALLUS=()=>{
+
+    CALL('+256705665894');
+
+};
+
+const EMAILUS=()=>{
+
+    GMAIL('ashshakurcharityandorphanageai@gmail.com');
+
+};
+
+const WHATSAPPUS=()=>{
+
+    WEBSITE('https://wa.me/256789467876');
+
+};
+
+const INSTAGRAMUS=()=>{
+
+    WEBSITE('https://www.instagram.com/ash_shakur_charity_?igsh=ZXlrMmNqc3poYTh6');
+
+};
+
+const FACEBOOKUS=()=>{
+
+    WEBSITE('https://www.facebook.com/profile.php?id=100080811854731&mibextid=ZbWKwL');
+
+};
