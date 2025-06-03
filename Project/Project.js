@@ -28,7 +28,9 @@ const HOMEPAGE=()=>{
 
                 <p class='Motto'>"Helping the poor orphans and the needy people"</p>
 
-                <img class='RightIcon' src='${WHITEMENUICON}'/>
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEMENUICON}"/>
+
+                <img id='MenuClose' onclick='MENUCLOSE()' class="RightIcon" src="${WHITECLOSEICON}"/>
 
             </div>
 
@@ -40,10 +42,170 @@ const HOMEPAGE=()=>{
 
         </header>
 
-        <div class=''>
+        <div class='RelativeDiv'>
+
+            <div class='TopNav' id='Menu' >
+
+                <p>About Us</p>
+
+                <p onclick='PROJECTPAGEROUTER()'>Our Projects</p>
+
+                <p onclick='CONTACTUSPAGEROUTER()'>Contact Us</p>
+
+            </div>
+
+            <div class='MainImage'>
+        
+                <img src='https://ashshakurcharity.org/Assets/waterwells/waterwellmain.jpg'/>
+
+                <footer class='MainFooter'>
+
+                    <p class='Message'>Our Prophet Muhammed is reported to have said ,"<b class='SubMessage'>The Best Form of Charity is to give someone water to drink.</b> "</p>
+                
+                </footer>
+        
+            </div>
+
+            <br><br>
+
+            <h1>With Regards</h1>
+
+            <br>
+
+            <p class='LeftText'>Ash Shakur Charity and orphanage aid is a nonprofit organization dedicated to transforming lives by addressing the needs of orphans, underprevileged children, and vulnerable communities. With a mission to provide access to water and sanitation, food and clothing, Qurbani and aqeeqa, Ramadan programs, education, healthcareand shelter, we aim to create sustainable solutions that empower individuals and fosterhope.</p>
+
+            <br>
+
+            <p class='LeftText'>Since our inception, we have encouted countless lives through provideing education, supporting healthcare initiatives, and providing safe havns to those in need. Every donation and volunteer efforts brings closer to a word where every child has the opportunity to thrive.</p>
+
+            <br>
+
+            <h1 class='Season'>QURBAN</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage'  src='https://ashshakurcharity.org/Assets/Quraban/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>It is neither their meat nor their bolld that reaches Allah but it is piety from you that reaches Him.</p>
+
+            <br><br>
+
+            <h1 class='Season'>HOT MEAL</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Every Child Deserves a full plate</p>
+
+            <br><br>
+
+            <h1 class='Season'>FOOD PACKS</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Distributing food packs to combat hunger to the most needy families and vulunerable communities.</p>
+
+            <br><br>
+
+            <h1 class='Season'>MOSQUE CONSTRUCTION</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Distributing food packs to combat hunger to the most needy families and vulunerable communities.</p>
+
+            <br><br>
+
+            <h1 class='Season'>QURAN DISTRIBUTION</h1>
+
+            <br>
+
+            <div class='SlideDiv'>
+
+                <img class='QurabanImage' src='https://ashshakurcharity.org/Assets/hotmeal/main.jpg'/>
+            
+            </div>
+
+            <br>
+
+            <p id='QuraBanMessage' class='CenterText'>Distributing food packs to combat hunger to the most needy families and vulunerable communities.</p>
+
+            <br><br>
+
+            <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+            <br>
         
         </div>
 
     `);
 
+};
+
+const MENUOPEN=()=>{
+
+    var MENU=NAMING('#MenuOpen');
+
+    var MENUCLOSER=NAMING('#MenuClose');
+
+    var MENUDRAWER=NAMING('#Menu');
+
+    CLICK(MENU,()=>{
+
+        STYLED(MENUDRAWER,'display','inline-flex');
+
+        STYLED(MENUCLOSER,'display','block');
+
+        STYLED(MENU,'display','none');
+
+    });
+
+};
+
+const MENUCLOSE=()=>{
+
+    var MENU=NAMING('#MenuOpen');
+
+    var MENUCLOSER=NAMING('#MenuClose');
+
+    var MENUDRAWER=NAMING('#Menu');
+
+    CLICK(MENUCLOSER,()=>{
+
+        STYLED(MENUDRAWER,'display','none');
+
+        STYLED(MENUCLOSER,'display','none');
+
+        STYLED(MENU,'display','block');
+
+    });
+ 
 };
