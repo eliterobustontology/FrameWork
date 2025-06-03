@@ -42,7 +42,7 @@ const HOMEPAGE=()=>{
 
         </header>
 
-        <div class='RelativeDiv'>
+        <div class='ScrollDiv'>
 
             <div class='TopNav' id='Menu' >
 
@@ -208,4 +208,10 @@ const MENUCLOSE=()=>{
 
     });
  
+};
+
+const POWERUS=()=>{
+
+    WEBSITE('https://eroinnovations.site');
+
 };
