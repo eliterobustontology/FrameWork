@@ -125,7 +125,7 @@ const DONATEPAGE=()=>{
 
             <h1>FundRaising</h1>
 
-            <p class='BriefIntro'>Community Rise Ventures Being a Non Government Funded Organisation,We There Operate Our Projects Using the Donation Funds Provided by The good well to keep the Community Projects Runnings.<br><br> Those interested in being a good cause for the needy please donate to the Following Account Below.</p>
+            <p class='BriefIntro'>Community Rise Ventures Being a Non Government Funded Organisation,We There Operate Our Projects Using the Donated Funds Provided by the Donors to keep the Community Projects Running.<br><br> Those interested in being part of a good cause for the needy <br><br> Please donate Using the Account Details Below.</p>
 
             <h1>Account Details</h1>
             
