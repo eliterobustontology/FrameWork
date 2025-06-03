@@ -228,11 +228,11 @@ const HOTMEAL=()=>{
 
     STOREDATA('','Title','Every child deserves a full plate');
 
-    STOREDATA('','Story',`Peoples lives are in grave risk as a result of food shortage and poverty, especially in those who are occupied in areas of large populations while others are forced to eat grass and others starve to death. Malnutrition makes differnt individuals more pronr to illness and less able to recover from accidents, which creates a circle of mortality that seems to never end.
-
-We as a team having realised this as a difficulty we come to provide a meal to those who can not have two meals a day to ensure they have somthing in their stomachs to keep smiling faces as well as saving lives with your geneous donations.
-
-Together we can save humanity.`);
+    STOREDATA('','Story',`<p class='LeftText'>Peoples lives are in grave risk as a result of food shortage and poverty, especially in those who are occupied in areas of large populations while others are forced to eat grass and others starve to death. Malnutrition makes differnt individuals more pronr to illness and less able to recover from accidents, which creates a circle of mortality that seems to never end.
+    <br><br>
+    We as a team having realised this as a difficulty we come to provide a meal to those who can not have two meals a day to ensure they have somthing in their stomachs to keep smiling faces as well as saving lives with your geneous donations.</p>
+    <br><br>
+    <h1>Together we can save humanity.</h1>`);
 
     STOREDATA('','ProjectName','Quran Distribution');
 
@@ -248,7 +248,7 @@ const QURANDISTRIBUTION=()=>{
 
     STOREDATA('','Title','Sharing Quran is swadaqatul-jariya in which whoever gives one receives a reward from whenever someone recites it.');
 
-    STOREDATA('','Story',`Whoever recites a letter from the Quran receives the reward of a good deed and each good deed is worth ten goods and therefore it is a sadaqah jariyah for the donator that he/she receives rewards too whenever the same Quran donated is recited.Quran distribution is at the heart of our charity's mission. As muslims muslims, that sharing the Quran is one of the most valuable and rewarding acts of worship. we distribute copies of Quran to different madrasa Schools and mosques where they are limited.This enables every individual to accesss the message from Allah to human .`);
+    STOREDATA('','Story',`<p class='LeftText'>Whoever recites a letter from the Quran receives the reward of a good deed and each good deed is worth ten goods and therefore it is a sadaqah jariyah for the donator that he/she receives rewards too whenever the same Quran donated is recited.Quran distribution is at the heart of our charity's mission. As muslims muslims, that sharing the Quran is one of the most valuable and rewarding acts of worship. we distribute copies of Quran to different madrasa Schools and mosques where they are limited.This enables every individual to accesss the message from Allah to human .<p>`);
 
     STOREDATA('','ProjectName','Quran Distribution');
 
