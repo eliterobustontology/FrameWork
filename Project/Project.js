@@ -88,7 +88,7 @@ const HOMEPAGE=()=>{
 
             <div class='SlideDiv'>
 
-                <img class='QurabanImage'  src='https://ashshakurcharity.org/Assets/Quraban/main.jpg'/>
+                <img onclick='QURBAN()'  class='QurabanImage'  src='https://ashshakurcharity.org/Assets/Quraban/main.jpg'/>
             
             </div>
 
@@ -170,6 +170,62 @@ const HOMEPAGE=()=>{
 
     `);
 
+};
+
+const QURBAN=()=>{
+
+    STOREDATA('','ProjectName','QURBAN');
+
+    STOREDATA('','Image','https://ashshakurcharity.org/Assets/Quraban/main.jpg');
+
+    STOREDATA('','Title','Make your sacrifice and aqeeqa');
+
+    STOREDATA('','SubTitle','Qurbani Sacrifice 2025 pre order now!');
+
+    STOREDATA('','Story',`Qurbani animal sacrifices is a significant event for muslims during the Islamic month of Dhuk hijjah.
+At our charity we mark this tradition with our an annual event, supported by your donations.
+Allihamudullilah last year you hjelped us provide Qurbani fresh meat and meals - this year with your generous help we can provvide nutrious food offerings it is needed most in Uganda and other Africa countries on Eid al Adha In sha Allah.
+
+"It is neither meat nor their blood that reaches Allah, but is piety from you that reaches Him."
+
+Qur'an 22:37
+All Muslims adults who are eligible to pay Zakat must make an animal sacrifice. By giving your qurbani, you are fullfilling your religious obligation to provide quality, nutrious food to the poor.
+
+
+What is Qurbani?
+Qurbani is the rightious of sheep, goats, camel and cattle between the tenth and twelfth days of Dhul Hijjah, the final month pof the Islamic calender.
+Qurbani is a sacred acyt to honour the tradition of the blessed Prophet Ibrahim(AS), his beloved son Ismail(AS)and their story of Sacrifice and devotion to Allah(SWT).
+
+We called to him "O Ibrahim , you have fulfilled the vision. Indeed we thus reward the doers of good,this was a clear trial."Qur'an(37:104)
+
+A single qurbani donation can provide nutrious meals ,and supply protein-filled meat to where iyts most throughout the year.
+
+Who is Qurbani compulsory for?
+
+Qurbani holds a special place in Islam. Its importance is stressed upon the qur'an and it serves as a reminder of prophet Ibrahim(AS) devotion and obedience.
+
+According to many scholars, Qurbani is an obligation for all muslims whose wealth reaches the zakat threshold. Despite this, its critical role within Islam is often missed, resulting in tremendous baraka being lost.
+
+The Prophet Muhammad said:"For every hair of the Qurbani, you nreceived reward from Allah(SWT)"
+
+It is known that donating Qurbani brings abundant rewards from Allah(SWT). But crucially, the most imprtant part of giving Qurbani is the intension: It must be given humbly with Allah's consciousness(Taqwa)
+
+
+When is Qurbani?
+It is advisable to donayte as early as possible to ensure their is enough time of allocation and preparation
+
+The time for physically offerings begin after the Eid prayer on Eid-al-Aldha, whjich this year it is expected to be 16th June and it ends when the sun sets on the thirteenth of Dhu'l-Hijjah.
+
+There are four days of sacrifice: the day of Eid-al-Adhaand the three days after it.
+
+What does 'where most needed' mean?
+
+We work with experts in the field as well as our established patners on the ground to locate communities and people that are most needed,sowhen we say your donation is being delivered to where it is most needed, rest assured that your helping support some of the most vulnerable communities in the on the land of Africa!
+
+We always do our best to meet your requests. Ash shakur Charity will endavour to use your funds as requested, wherever possible. If for any reason we can not use your donation as you have indicated, we will use to fund similar projects in several communities.`);
+
+    ROUTE(' ',SINGLEPROJECTPAGE,'HOMEPAGE');
+    
 };
 
 const HOTMEAL=()=>{
