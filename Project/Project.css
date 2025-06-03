@@ -33,9 +33,22 @@ header{
     background: gray;
 }
 
+.DonateWord{
+    color: #ffffff;
+}
+
 .PoweringCompany{
     color: forestgreen;
     font-size: 18px;
+}
+
+#ContactHolder{
+    background: forestgreen;
+    width: 95%;
+}
+
+.SendButton{
+    background: forestgreen;
 }
 
 .ScrollDiv{
@@ -95,4 +108,24 @@ header{
 
 .QurabanImage{
     object-fit: contain;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #000000;
+}
+
+p{
+    color: #000000;
+}
+
+.LeftText{
+    color: #000000;
+}
+
+input{
+    color: #000000;
+}
+
+textarea{
+    color: #000000;
 }

@@ -1,6 +1,8 @@
 const URL='https://docs.google.com/spreadsheets/d/1x_Nruw60vwcWJKkMUWpNncGzQSoPgHoMP2X8so3eS8I/edit?usp=sharing';
 
 const NOVASTART=()=>{
+
+    APPMODE('#ffffff');
     
     VISITOR(URL,'Users');
 
@@ -36,7 +38,7 @@ const HOMEPAGE=()=>{
 
             <div id='DonateSection' class='TopNav'>
 
-                <h1>Donate</h1>
+                <h1 class='DonateWord'>Donate</h1>
             
             </div>
 
@@ -242,7 +244,7 @@ const CONTACTUSPAGE=()=>{
 
             <div id='DonateSection' class='TopNav'>
 
-                <h1>Donate</h1>
+                <h1 class='DonateWord'>Donate</h1>
             
             </div>
 
