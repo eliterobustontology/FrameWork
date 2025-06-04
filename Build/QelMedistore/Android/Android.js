@@ -10,6 +10,8 @@ const HOMEPAGE=()=>{
 
     DISPLAY('',`
 
+        <h1>Under Development</h1>
+
         <footer>
 
             <div class='IconHolderDiv'>
