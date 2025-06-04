@@ -44,7 +44,7 @@ const HOMEPAGE=()=>{
 
             <div class='TopNav' id='Menu' >
 
-                <p>About Us</p>
+                <p onclick='ABOUTUSPAGEROUTER()'>About Us</p>
 
                 <p onclick='PROJECTPAGEROUTER()'>Our Projects</p>
 
@@ -631,5 +631,47 @@ const PROJECTPAGE=()=>{
         console.log(data);
 
     });
+
+};
+
+const ABOUTUSPAGEROUTER=()=>{
+
+    ROUTE(' ',ABOUTUSPAGE,'HOMEPAGE');
+
+};
+
+const ABOUTUSPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <div id='HeaderHolder' class='TopNav'>
+
+                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+                <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
+
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
+
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEPHONEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1 class='DonateWord'>Donate</h1>
+            
+            </div>
+
+        </header>
+
+        <div class='ScrollDiv'>
+
+
+
+        </div>
+
+    `);
 
 };
