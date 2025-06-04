@@ -452,7 +452,7 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
             <div id='HeaderHolder' class='TopNav'>
 
-                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+                <img  class='LeftIcon' src='${WHITEBACKICON}'/>
         
                 <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
 
@@ -522,6 +522,22 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
     `);
 
+    var BACK=NAMING('.LeftIcon');
+
+    CLICK(BACK,()=>{
+
+        CONDITION(sessionStorage.getItem('PreviousPage') === 'PROJECTPAGE',()=>{
+
+            PROJECTPAGEROUTER();
+
+        },()=>{
+
+            HOMEPAGEROUTER();
+
+        });
+
+    });
+
 };
 
 const PROJECTPAGEROUTER=()=>{
@@ -531,6 +547,10 @@ const PROJECTPAGEROUTER=()=>{
 };
 
 const PROJECTPAGE=()=>{
+
+    BACKPAGE('HOMEPAGE');
+
+    const PROJECTAPI='https://eroinnovations.github.io/FrameWork/Build/Ashshakur/Project/Projects.json';
 
     DISPLAY('',`
 
@@ -558,8 +578,58 @@ const PROJECTPAGE=()=>{
 
         <div class='ScrollDiv'>
 
+            <p>...Please Wait...</p>
+
         </div>
 
     `);
+
+    var HOMEDIV=NAMING('.ScrollDiv');
+
+    GETPACKAGE(PROJECTAPI,'cors',(data)=>{
+
+        DISPLAY(HOMEDIV,'');
+
+        REDUX(data,(datata)=>{
+
+            CREATEELEMENT(HOMEDIV,'div','IbraProject',(ELEMENT)=>{
+
+                DISPLAY(ELEMENT,`
+
+                    <img class='ProjectImage' src='${datata.Image}'/>
+
+                    <footer id='ProjectFooter' class='MainFooter'>
+
+                        <p class='Message'>${datata.Name}</p>
+                
+                    </footer>
+                    
+                `);
+
+                CLICK(ELEMENT,()=>{
+
+                    STOREDATA('','ProjectName',datata.Name);
+
+                    STOREDATA('','Image',datata.Image);
+
+                    STOREDATA('','Title',datata.Header);
+
+                    STOREDATA('','SubTitle',datata.SubTitle);
+
+                    STOREDATA('','Story',datata.Story);
+
+                    ROUTE(' ',SINGLEPROJECTPAGE,'PROJECTPAGE');
+
+                });
+
+            });
+
+        });
+
+    },(data)=>{
+
+        console.log(data);
+
+    });
 
 };
