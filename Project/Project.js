@@ -446,7 +446,7 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
                 <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
         
-                <h1 class='CompanyName'>${sessionStorage.getItem('ProjectName')}</h1>
+                <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
 
                 <p class='Motto'>"Helping the poor orphans and the needy people"</p>
 
@@ -463,6 +463,10 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
         </header>
 
         <div class='ScrollDiv'>
+
+            <br>
+
+            <h1>${sessionStorage.getItem('ProjectName')}</h1>
 
             <br>
 
