@@ -20,7 +20,7 @@ const HOMEPAGE=()=>{
 
     DISPLAY('',`
 
-        <header>
+        <header class='HomeHeader'>
 
             <div id='HeaderHolder' class='TopNav'>
 
@@ -42,10 +42,6 @@ const HOMEPAGE=()=>{
             
             </div>
 
-        </header>
-
-        <div class='ScrollDiv'>
-
             <div class='TopNav' id='Menu' >
 
                 <p>About Us</p>
@@ -55,6 +51,10 @@ const HOMEPAGE=()=>{
                 <p onclick='CONTACTUSPAGEROUTER()'>Contact Us</p>
 
             </div>
+
+        </header>
+
+        <div id='HomeScroll' class='ScrollDiv'>
 
             <div class='MainImage'>
         
@@ -290,6 +290,8 @@ const MENUOPEN=()=>{
 
     var MENUDRAWER=NAMING('#Menu');
 
+    var SCROLLHOME=NAMING('#HomeScroll');
+
     CLICK(MENU,()=>{
 
         STYLED(MENUDRAWER,'display','inline-flex');
@@ -297,6 +299,8 @@ const MENUOPEN=()=>{
         STYLED(MENUCLOSER,'display','block');
 
         STYLED(MENU,'display','none');
+
+        STYLED(SCROLLHOME,'top','200px');
 
     });
 
@@ -310,6 +314,8 @@ const MENUCLOSE=()=>{
 
     var MENUDRAWER=NAMING('#Menu');
 
+    var SCROLLHOME=NAMING('#HomeScroll');
+
     CLICK(MENUCLOSER,()=>{
 
         STYLED(MENUDRAWER,'display','none');
@@ -317,6 +323,8 @@ const MENUCLOSE=()=>{
         STYLED(MENUCLOSER,'display','none');
 
         STYLED(MENU,'display','block');
+
+        STYLED(SCROLLHOME,'top','150px');
 
     });
  
