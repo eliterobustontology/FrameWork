@@ -523,3 +523,43 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
     `);
 
 };
+
+const PROJECTPAGEROUTER=()=>{
+
+    ROUTE(' ',PROJECTPAGE,'HOMEPAGE');
+
+};
+
+const PROJECTPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <div id='HeaderHolder' class='TopNav'>
+
+                <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+                <h1 class='CompanyName'>Ash Shakur Charity and Orphanage Aid</h1>
+
+                <p class='Motto'>"Helping the poor orphans and the needy people"</p>
+
+                <img id='MenuOpen' onclick='MENUOPEN()' class="RightIcon" src="${WHITEPHONEICON}"/>
+
+            </div>
+
+            <div id='DonateSection' class='TopNav'>
+
+                <h1 class='DonateWord'>Donate</h1>
+            
+            </div>
+
+        </header>
+
+        <div class='ScrollDiv'>
+
+        </div>
+
+    `);
+
+};
