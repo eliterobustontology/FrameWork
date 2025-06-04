@@ -668,7 +668,61 @@ const ABOUTUSPAGE=()=>{
 
         <div class='ScrollDiv'>
 
+            <br>
 
+            <h1 class='AboutUsTitle'>Help to give Hope</h1>
+
+            <br>
+
+            <p class='LeftText'>Ash Shakur Charity and Orphanage Aid, founded by thr local community in Uganda, was established to address the pressing economic challenges and natural calamities affecting vulnerable populations. Our mission is to eradicate poverty and uplift weak communities through a variety of impactful initiatives.
+
+            <br><br>
+
+            These include farming, animal rearing, emergency relief, food aid, water and sanitation projects, Ramadan programs, Qurban and Aqeeqa programs. We also focus on construction, Education, Healthcare, Human rights Adocancy and orphan care. Join us in making a difference.</p>
+
+            <br>
+
+            <h1 class='AboutUsTitle'>Mission</h1>
+
+            <br>
+
+            <p class='LeftText'>To alleviate poverty and improve the quality of life for vulnerable populations in Uganda and engaging the local communities. We strive to bring lasting change and hope to those in need.</p>
+
+            <br>
+
+            <p class='LeftText'>To work toward s topping the policies and activities of persecuting and disctriminating against people in order to prevent violations of their basic rights and freedom</p>
+
+            <br>
+
+            <h1 class='AboutUsTitle'>Vision</h1>
+
+            <br>
+
+            <p class='LeftText'>To create a self reliant and empowered community in Uganda, free from poverty and suffering, where every individual has access to basic needs, Education and oppotunities for a dignified life.</p>
+
+            <br>
+
+            <p class='LeftText'>To get help to the areas in difficulties and provide permanent solutions through permanent projects.</p>
+
+            <br>
+
+            <h1 class='AboutUsTitle'>Find Us Here</h1>
+
+            <br>
+
+            <div id='ContactHolder' class='TopNav'>
+
+                <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+            
+            </div>
+
+            <br><br>
 
         </div>
 

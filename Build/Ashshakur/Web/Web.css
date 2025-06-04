@@ -179,5 +179,9 @@ textarea{
 }
 
 #ProjectFooter{
-    height: 30px;
+    height: 50px;
+}
+
+.AboutUsTitle{
+    color: forestgreen;
 }
