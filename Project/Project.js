@@ -16,7 +16,11 @@ const HOMEPAGE=()=>{
 
     DISPLAY('',`
 
-        <h1>Under Development</h1>
+        <div class='HomeScroll'>
+
+            <input class='RoundInput' type='Seaarch' placeholder='Search For Item'/>
+        
+        </div>
 
         <footer>
 

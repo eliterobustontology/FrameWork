@@ -10,3 +10,11 @@
 .LeftIcon{
     margin-left: 0.1rem;
 }
+
+.HomeScroll{
+    background: transparent;
+    top: 0;
+    height: auto;
+    bottom: 100px;
+    overflow-y: auto;
+}
