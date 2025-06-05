@@ -550,7 +550,7 @@ const PROJECTPAGE=()=>{
 
     BACKPAGE('HOMEPAGE');
 
-    const PROJECTAPI='https://eroinnovations.github.io/FrameWork/Build/Ashshakur/Project/Projects.json';
+    const PROJECTAPI='https://docs.google.com/spreadsheets/d/1x_Nruw60vwcWJKkMUWpNncGzQSoPgHoMP2X8so3eS8I/edit?usp=sharing';
 
     DISPLAY('',`
 
@@ -586,44 +586,44 @@ const PROJECTPAGE=()=>{
 
     var HOMEDIV=NAMING('.ScrollDiv');
 
-    GETPACKAGE(PROJECTAPI,'cors',(data)=>{
+    GETDATA(PROJECTAPI,'Projects',(data)=>{
 
         DISPLAY(HOMEDIV,'');
-
+    
         REDUX(data,(datata)=>{
-
+    
             CREATEELEMENT(HOMEDIV,'div','IbraProject',(ELEMENT)=>{
-
+    
                 DISPLAY(ELEMENT,`
-
+    
                     <img class='ProjectImage' src='${datata.Image}'/>
-
+    
                     <footer id='ProjectFooter' class='MainFooter'>
-
+    
                         <p class='Message'>${datata.Name}</p>
                 
                     </footer>
                     
                 `);
-
+    
                 CLICK(ELEMENT,()=>{
-
+    
                     STOREDATA('','ProjectName',datata.Name);
-
+    
                     STOREDATA('','Image',datata.Image);
-
+    
                     STOREDATA('','Title',datata.Header);
-
+    
                     STOREDATA('','SubTitle',datata.SubTitle);
-
+    
                     STOREDATA('','Story',datata.Story);
-
+    
                     ROUTE(' ',SINGLEPROJECTPAGE,'PROJECTPAGE');
-
+    
                 });
-
+    
             });
-
+    
         });
 
     },(data)=>{
