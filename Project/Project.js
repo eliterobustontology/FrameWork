@@ -16,7 +16,7 @@ const HOMEPAGE=()=>{
 
         <div class='HomeScroll'>
 
-            <input class='RoundInput' type='Seaarch' placeholder='Search For Item'/>
+            <input class='RoundInput' type='search' placeholder='Search For Item'/>
         
         </div>
 
