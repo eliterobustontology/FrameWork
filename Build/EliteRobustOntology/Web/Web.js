@@ -26,6 +26,8 @@ const HOMEPAGE=()=>{
 
             <h1>Welcome </h1>
 
+            <br>
+
             <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Software Development Company Based in Mbale Uganda.</p>
         
             <br>
