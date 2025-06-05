@@ -1,3 +1,5 @@
-body{
-    background: #333333;
+.HomeDiv{
+    top: 50px;
+    height: auto;
+    overflow-y: auto;
 }
