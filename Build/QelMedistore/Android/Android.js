@@ -1,6 +1,26 @@
+const QELAPI='https://docs.google.com/spreadsheets/d/18BUoCg4yVUrxWv8RG885ZIn2fjkURGgjIrCi6otCxFk/edit?usp=sharing';
+
 const NOVASTART=()=>{
 
     ROUTE('',HOMEPAGE,'HOMEPAGE');
+
+    DATAUPDATER();
+
+};
+
+const DATAUPDATER=()=>{
+
+    DOWNLOADSAVEINDEX(QELAPI,'Products','Products',()=>{
+        HOMEPAGE();
+    });
+
+    DOWNLOADSAVEINDEX(QELAPI,'Catergory','Catergory',()=>{
+       
+    });
+
+    DOWNLOADSAVEINDEX(QELAPI,'Policies','Policies',()=>{
+       
+    });
 
 };
 
@@ -143,6 +163,34 @@ const USERACCOUNTPAGE=()=>{
             <p class='RightText' >User Account</p>
 
         </header>
+
+    `);
+
+};
+
+const PRODUCTPAGEROUTER=()=>{
+
+    ROUTE(' ',PRODUCTPAGE,'HOMEPAGE');
+
+};
+
+const PRODUCTPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img class='LeftIcon' src='${WHITESINGLEBACKICON}' onclick='HOMEPAGEROUTER()'/>
+        
+            <p class='RightText' >Product</p>
+
+        </header>
+
+        <div class='HomeDiv'>
+
+            <button class='BuyNow'>Buy Now</button>
+
+        </div>
 
     `);
 
