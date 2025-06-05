@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://eroinnovations.github.io/FrameWork/Library/Assets/Images/Posts/CommunityRise/Logo.jpg" type="image/x-icon">
+    <title>image Base 64</title>
+</head>
+<link rel="stylesheet" href="https://eroinnovations.github.io/FrameWork/Library/Styles/Styles.css">
+<link rel="stylesheet" href="https://eroinnovations.github.io/FrameWork/Library/Styles/Components.css">
+<link rel="stylesheet" href="https://eroinnovations.github.io/FrameWork/Library/Styles/Classes.css">
+<script src="https://eroinnovations.github.io/FrameWork/Library/Functions/Assets.js"></script>
+<script src="https://eroinnovations.github.io/FrameWork/Library/Functions/Connection.js"></script>
+<script src="https://eroinnovations.github.io/FrameWork/Library/Functions/Functions.js"></script>
+<script src="https://eroinnovations.github.io/FrameWork/Library/Functions/Plugins.js"></script>
+<style>
+    .SelectedImage{
+        width: 70%;
+        height: 70%;
+        margin-top: 2%;
+    }
+
+    .AddButton{
+        background: forestgreen;
+    }
+
+    .Copy{
+        background: teal;
+    }
+
+    .Clear{
+        background: brown;
+    }
+
+    button{
+        width: 45%;
+    }
+
+    .TopNav{
+        height: 100px;
+    }
+
+</style>
+<body></body>
+<script>
+    ZOOM();
+    STOREDATA(' ','Environment','Web');
+    INSPECTION();
+
+    APPMODE('#333333')
+
+    DISPLAY('',`
+
+        <img class='SelectedImage' src='#'/>
+
+        <button class='AddButton'>Add Image</button>
+
+        <div class='TopNav'>
+
+            <button class='Copy'>Copy Image Data</button>
+
+            <button onclick='RELOAD()' class='Clear'>Clear Image Data</button>
+            
+        </div>
+
+    `);
+
+    var AddButton=NAMING('.AddButton');
+
+    var SelectedImage=NAMING('.SelectedImage');
+
+    var Copy=NAMING('.Copy');
+
+    CLICK(AddButton,()=>{
+        
+        IMAGEPICKER(SelectedImage,(data)=>{
+
+            STOREDATA('','Imaged',data);
+
+        });
+
+    });
+
+    CLICK(Copy,()=>{
+
+        if (sessionStorage.getItem('Imaged')) {
+
+            COPY(sessionStorage.getItem('Imaged'),()=>{
+            
+                TOAST('copied Successfully')
+
+            });
+            
+        } else {
+
+           TOAST('Select Image to Copy')
+ 
+            
+        };
+
+
+    });
+
+</script>
+</html>
