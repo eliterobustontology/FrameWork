@@ -6,6 +6,12 @@ const NOVASTART=()=>{
 
 };
 
+const HOMEPAGEROUTER=()=>{
+
+    ROUTE('',HOMEPAGE,'HOMEPAGE');
+
+};
+
 const HOMEPAGE=()=>{
 
     DISPLAY('',`
@@ -14,7 +20,7 @@ const HOMEPAGE=()=>{
 
         <footer>
 
-            <div class='IconHolderDiv'>
+            <div class='IconHolderDiv' onclick='SECTIONPAGEROUTER()'>
 
                 <img class='Icon' src='${WHITEFOLDERICON}'/>
 
@@ -22,7 +28,7 @@ const HOMEPAGE=()=>{
 
             </div>
 
-            <div class='IconHolderDiv'>
+            <div class='IconHolderDiv' onclick='SHOPPAGEROUTER()'>
 
                 <img class='Icon' src='${WHITESHOPPINGCART}'/>
 
@@ -30,7 +36,7 @@ const HOMEPAGE=()=>{
 
             </div>
 
-            <div class='IconHolderDiv'>
+            <div class='IconHolderDiv' onclick='SAVEDPAGEROUTER()'>
 
                 <img class='Icon' src='${WHITESAVEDICON}'/>
 
@@ -38,7 +44,7 @@ const HOMEPAGE=()=>{
 
             </div>
 
-            <div class='IconHolderDiv'>
+            <div class='IconHolderDiv' onclick='USERACCOUNTPAGEROUTER()'>
 
                 <img class='Icon' src='${WHITEUSERPROFILEICON}'/>
 
@@ -48,6 +54,94 @@ const HOMEPAGE=()=>{
 
         </footer>
         
+    `);
+
+};
+
+const SECTIONPAGEROUTER=()=>{
+
+    ROUTE(' ',SECTIONPAGE,'HOMEPAGE');
+
+};
+
+const SECTIONPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img class='LeftIcon' src='${WHITESINGLEBACKICON}' onclick='HOMEPAGEROUTER()'/>
+        
+            <p class='RightText' >Sections</p>
+
+        </header>
+
+    `);
+
+};
+
+const SHOPPAGEROUTER=()=>{
+
+    ROUTE(' ',SHOPPAGE,'HOMEPAGE');
+
+};
+
+const SHOPPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img class='LeftIcon' src='${WHITESINGLEBACKICON}' onclick='HOMEPAGEROUTER()'/>
+        
+            <p class='RightText' >Shop</p>
+
+        </header>
+
+    `);
+
+};
+
+const SAVEDPAGEROUTER=()=>{
+
+    ROUTE(' ',SAVEDPAGE,'HOMEPAGE');
+
+};
+
+const SAVEDPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img class='LeftIcon' src='${WHITESINGLEBACKICON}' onclick='HOMEPAGEROUTER()'/>
+        
+            <p class='RightText' >Saved</p>
+
+        </header>
+
+    `);
+
+};
+
+const USERACCOUNTPAGEROUTER=()=>{
+
+    ROUTE(' ',USERACCOUNTPAGE,'HOMEPAGE');
+
+};
+
+const USERACCOUNTPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img class='LeftIcon' src='${WHITESINGLEBACKICON}' onclick='HOMEPAGEROUTER()'/>
+        
+            <p class='RightText' >User Account</p>
+
+        </header>
+
     `);
 
 };
