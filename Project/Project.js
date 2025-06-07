@@ -148,7 +148,7 @@ const HOMEPAGE=()=>{
 
             <br><br>
 
-            <h1 class='Season'>QURAN DISTRIBUTION</h1>
+            <h1 id='QuranSection' class='Season'>QURAN DISTRIBUTION</h1>
 
             <br>
 
@@ -231,7 +231,7 @@ const QURBAN=()=>{
 const HOTMEAL=()=>{
 
     STOREDATA('','ScrollPoint','HotMealSection');
-
+    
     STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
 
     STOREDATA('','Title','Every child deserves a full plate');
@@ -277,6 +277,8 @@ const FOODPACK=()=>{
 };
 
 const QURANDISTRIBUTION=()=>{
+
+    STOREDATA('','ScrollPoint','QuranSection');
 
     STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
 

@@ -2,6 +2,8 @@ const URL='https://docs.google.com/spreadsheets/d/1x_Nruw60vwcWJKkMUWpNncGzQSoPg
 
 const NOVASTART=()=>{
 
+    DELETEDATA('','ScrollPoint');
+
     APPMODE('#ffffff');
     
     VISITOR(URL,'Users');
@@ -82,7 +84,7 @@ const HOMEPAGE=()=>{
 
             <br>
 
-            <h1 class='Season'>QURBAN</h1>
+            <h1 id='QurbanSection'  class='Season'>QURBAN</h1>
 
             <br>
 
@@ -98,7 +100,7 @@ const HOMEPAGE=()=>{
 
             <br><br>
 
-            <h1 class='Season'>HOT MEAL</h1>
+            <h1 id='HotMealSection' class='Season'>HOT MEAL</h1>
 
             <br>
 
@@ -114,7 +116,7 @@ const HOMEPAGE=()=>{
 
             <br><br>
 
-            <h1 class='Season'>FOOD PACKS</h1>
+            <h1 id='FoodPackSection' class='Season'>FOOD PACKS</h1>
 
             <br>
 
@@ -146,7 +148,7 @@ const HOMEPAGE=()=>{
 
             <br><br>
 
-            <h1 class='Season'>QURAN DISTRIBUTION</h1>
+            <h1 id='QuranSection' class='Season'>QURAN DISTRIBUTION</h1>
 
             <br>
 
@@ -170,9 +172,13 @@ const HOMEPAGE=()=>{
 
     `);
 
+    SCROLLPOINT(sessionStorage.getItem('ScrollPoint'));
+
 };
 
 const QURBAN=()=>{
+
+    STOREDATA('','ScrollPoint','QurbanSection');
 
     STOREDATA('','ProjectName','QURBAN');
 
@@ -224,6 +230,8 @@ const QURBAN=()=>{
 
 const HOTMEAL=()=>{
 
+    STOREDATA('','ScrollPoint','HotMealSection');
+    
     STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
 
     STOREDATA('','Title','Every child deserves a full plate');
@@ -243,6 +251,8 @@ const HOTMEAL=()=>{
 };
 
 const FOODPACK=()=>{
+
+    STOREDATA('','ScrollPoint','FoodPackSection');
 
     STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
 
@@ -267,6 +277,8 @@ const FOODPACK=()=>{
 };
 
 const QURANDISTRIBUTION=()=>{
+
+    STOREDATA('','ScrollPoint','QuranSection');
 
     STOREDATA('','Image','https://ashshakurcharity.org/Assets/hotmeal/main.jpg');
 
@@ -343,6 +355,8 @@ const CONTACTUSPAGEROUTER=()=>{
 };
 
 const CONTACTUSPAGE=()=>{
+
+    DELETEDATA('','ScrollPoint');
 
     DISPLAY('',`
 
@@ -542,6 +556,8 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
 const PROJECTPAGEROUTER=()=>{
 
+    DELETEDATA('','ScrollPoint');
+
     ROUTE(' ',PROJECTPAGE,'HOMEPAGE');
 
 };
@@ -635,6 +651,8 @@ const PROJECTPAGE=()=>{
 };
 
 const ABOUTUSPAGEROUTER=()=>{
+
+    DELETEDATA('','ScrollPoint');
 
     ROUTE(' ',ABOUTUSPAGE,'HOMEPAGE');
 
