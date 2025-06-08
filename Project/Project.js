@@ -30,7 +30,7 @@ const HOMEPAGE=()=>{
 
             <div class='TopNav'>
 
-                <p>About Us</p>
+                <p onclick='ABOUTUSPAGEROUTER()' >About Us</p>
 
                 <p onclick='DEVELOPERPAGEROUTR()'>Developers</p>
 
@@ -194,6 +194,40 @@ const CONTACTUSPAGE=()=>{
 
             <br><br>
             
+        </div>
+        
+    `);
+
+};
+
+const ABOUTUSPAGEROUTER=()=>{
+
+    ROUTE(' ',ABOUTUSPAGE,'HOMEPAGE');
+
+};
+
+const ABOUTUSPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+            <p class='RightText'>Contact Us</p>
+
+        </header>
+
+        <div id='SectionDiv' class='RelativeDiv'>
+
+            <br>
+
+            <h1>Who are We?</h1>
+
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Company that Ventures in the Following Sections.</p>
+        
         </div>
         
     `);
