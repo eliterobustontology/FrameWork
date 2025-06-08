@@ -23,3 +23,12 @@
 .ParthnerFooter{
     background: #00000080;
 }
+
+#SectionDiv{
+    top: 50px;
+}
+
+.ServicesSection{
+    background: forestgreen;
+    padding: 2%;
+}

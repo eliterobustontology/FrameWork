@@ -12,6 +12,12 @@ const NOVASTART=()=>{
 
 };
 
+const HOMEPAGEROUTER=()=>{
+
+    ROUTE('',HOMEPAGE,'HOMEPAGE');
+
+};
+
 const HOMEPAGE=()=>{
 
     DISPLAY('',`
@@ -24,7 +30,7 @@ const HOMEPAGE=()=>{
 
                 <p>About Us</p>
 
-                <p>Developers</p>
+                <p onclick='DEVELOPERPAGEROUTR()'>Developers</p>
 
                 <p>Contact Us</p>
             
@@ -93,5 +99,53 @@ const HOMEPAGE=()=>{
         console.log(data);
 
     });
+
+};
+
+const DEVELOPERPAGEROUTR=()=>{
+
+    ROUTE('',DEVELOPERPAGE,'HOMEPAGE');
+
+};
+
+const DEVELOPERPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+            <p class='RightText'>Developers</p>
+
+        </header>
+
+        <div id='SectionDiv' class='RelativeDiv'>
+
+            <br>
+
+            <h1>Welcome Developer</h1>
+
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology also wants to help Developers focus on there craft thus we developed Plugins to Speed up your Work and Even allow developers to use our services thus enable Progress in cloud native technology.
+            <br><br>
+            Please readmore about our products and services, we provide to developers and how to install and use them below.</p>
+
+            <div class='TopNav'>
+
+                <p class='ServicesSection'>Elite Store</p>
+
+                <p class='ServicesSection' >Elite Pay</p>
+
+                <p class='ServicesSection'>Elite Frame Work</p>
+            
+            </div>
+
+            <p>Under Development</p>
+        
+        </div>
+        
+    `);
 
 };
