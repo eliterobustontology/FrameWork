@@ -34,7 +34,7 @@ const HOMEPAGE=()=>{
 
                 <p onclick='DEVELOPERPAGEROUTR()'>Developers</p>
 
-                <p>Contact Us</p>
+                <p onclick='CONTACTUSPAGEROUTR()'>Contact Us</p>
             
             </div>
 
@@ -152,6 +152,48 @@ const DEVELOPERPAGE=()=>{
 
             <p>Under Development</p>
         
+        </div>
+        
+    `);
+
+};
+
+const CONTACTUSPAGEROUTR=()=>{
+
+    ROUTE(' ',CONTACTUSPAGE,'HOMEPAGE');
+
+};
+
+const CONTACTUSPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+            <p class='RightText'>Contact Us</p>
+
+        </header>
+
+        <div id='SectionDiv' class='RelativeDiv'>
+
+            <br>
+
+            <h1>Fill the Form </h1>
+
+            <input class='RoundInput' type='text' placeholder='Enter Your Name'/>
+
+            <input class='RoundInput' type='email' placeholder='Enter Your Email'/>
+
+            <input class='RoundInput' type='text' placeholder='Provide Subject'/>
+
+            <textarea placeholder='Compose Message'></textarea>
+
+            <button class='SendMessage'>Send</button>
+
+            <br><br>
+            
         </div>
         
     `);
