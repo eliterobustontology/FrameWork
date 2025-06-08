@@ -4,6 +4,8 @@ const API='https://docs.google.com/spreadsheets/d/1QrPMVra0WEB1L_JWpZyvm1WRoVaSl
 
 const NOVASTART=()=>{
 
+    VISITOR(API,'Visitors');
+
     BODY();
 
     APPMODE('#333333');
