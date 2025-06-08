@@ -62,6 +62,12 @@ const HOMEPAGE=()=>{
         
     `);
 
+    PARTHNERS();
+
+};
+
+const PARTHNERS=()=>{
+
     const ParthnersDiv=NAMING('.ParthnersDiv');
 
     GETDATA(API,'Parthers',(data)=>{
@@ -69,8 +75,6 @@ const HOMEPAGE=()=>{
         DISPLAY(ParthnersDiv,'');
 
         REDUX(data,(element)=>{
-
-            console.log(element);
 
             CREATEELEMENT(ParthnersDiv,'div','ParthnerMiniDivs',(ELEMENT)=>{
 
