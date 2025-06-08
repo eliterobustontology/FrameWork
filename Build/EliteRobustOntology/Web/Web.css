@@ -1,5 +1,25 @@
-.HomeDiv{
-    top: 50px;
+.AppLogo{
+    width: 95%;
+    height: 150px;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+
+.ParthnersDiv{
+    position: relative;
     height: auto;
-    overflow-y: auto;
+    background: transparent;
+}
+
+.ParthnerMiniDivs{
+    position: relative;
+    width: 45%;
+    height: 200px;
+    display: inline-table;
+    margin: 2%;
+    border-radius: 10px;
+}
+
+.ParthnerFooter{
+    background: #00000080;
 }
