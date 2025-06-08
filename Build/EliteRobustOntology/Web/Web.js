@@ -12,7 +12,7 @@ const HOMEPAGE=()=>{
         
         <header>
 
-            <img class='LeftIcon' src='https://eroinnovations.github.io/FrameWork/Library/Assets/Images/Posts/Elite/CompanyLogo.png'/>
+            <img class='LeftIcon' src=''/>
 
             <p>Elite Robust Ontology</p>
 
