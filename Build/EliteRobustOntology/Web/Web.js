@@ -38,7 +38,9 @@ const HOMEPAGE=()=>{
 
             <h1>Welcome</h1>
 
-            <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Company Located In Mbale and We Venture in <b>Mobile App Development</b>,<b>Desktop Software Development</b>,<b>Website Development</b> and <b>System Design and Development</b></p>
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Company Located In Mbale and We Venture in <b>Mobile App Development</b>,<b>Desktop Software Development</b>,<b>Website Development</b> and <b>System Design and Development</b>.</p>
 
             <br>
 
