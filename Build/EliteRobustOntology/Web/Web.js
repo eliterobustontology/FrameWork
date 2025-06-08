@@ -140,6 +140,8 @@ const DEVELOPERPAGE=()=>{
             <br><br>
             Please readmore about our products and services, we provide to developers and how to install and use them below.</p>
 
+            <br>
+
             <div class='TopNav'>
 
                 <p class='ServicesSection'>Elite Store</p>
@@ -149,6 +151,8 @@ const DEVELOPERPAGE=()=>{
                 <p class='ServicesSection'>Elite Frame Work</p>
             
             </div>
+
+            <br>
 
             <p>Under Development</p>
         
