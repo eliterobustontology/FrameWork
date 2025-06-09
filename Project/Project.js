@@ -443,11 +443,11 @@ const CONTACTUSPAGE=()=>{
 
             <br>
 
-            <input class='RoundInput' placeholder='Enter Your Name'/>
+            <input id='Name' class='RoundInput' placeholder='Enter Your Name'/>
 
-            <input class='RoundInput' placeholder='Enter Your Email'/>
+            <input  id='Email' class='RoundInput' placeholder='Enter Your Email'/>
 
-            <textarea placeholder='Compose Your Message'></textarea>
+            <textarea id='Message' placeholder='Compose Your Message'></textarea>
 
             <button class='SendButton'>Send Message</button>
 
@@ -478,6 +478,69 @@ const CONTACTUSPAGE=()=>{
         </div>
 
     `);
+
+    const SEND=NAMING('.SendButton');
+    const Name=NAMING('#Name');
+    const Email=NAMING('#Email');
+    const Message=NAMING('#Message');
+
+    CLICK(SEND,()=>{
+
+        CONDITION(Name.value,()=>{
+
+            CONDITION(Email.value,()=>{
+
+                CONDITION(Message.value,()=>{
+
+                    TOAST('Please Wait');
+                    
+                    const Messages='You have A message From '+Name.value +'\n\n Senders Email '+Email.value +'\n\n and they are saying'+ '\n\n'+ Message.value;
+
+                    ASHMAIL('isikoibrhim006@gmail.com','Ashshakurcontactform',Messages,(data)=>{
+
+                        CONDITION(data.message === 'Email sent successfully.',()=>{
+
+                            TOAST('We Shall In Contact Shorlty');
+
+                            HIDER(3000,()=>{
+
+                                CONTACTUSPAGE();
+
+                            });
+
+                        } ,()=>{
+
+                            TOAST('Internal Server Error');
+
+                        })
+
+                        console.log(data);
+
+                    },()=>{
+
+                        TOAST('Failed to Send Contact Form,Please Try Again');
+
+                    })
+
+                },()=>{
+
+                    TOAST('Enter Your Message');
+                    
+                });
+
+            },()=>{
+
+                TOAST('Enter Your Email');
+                
+            });
+
+        },()=>{
+
+            TOAST('Enter Your Name');
+
+        });
+
+    });
 
 };
 
