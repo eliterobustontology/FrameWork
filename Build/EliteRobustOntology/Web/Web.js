@@ -22,12 +22,16 @@ const HOMEPAGEROUTER=()=>{
 
 const HOMEPAGE=()=>{
 
+    DELETEDATA('','Direct');
+
     DISPLAY('',`
 
         <div class='RelativeDiv'>
 
             <img class='AppLogo' src='${APPLOGO}'/>
 
+
+       
             <div class='TopNav'>
 
                 <p onclick='ABOUTUSPAGEROUTER()' >About Us</p>
@@ -37,6 +41,8 @@ const HOMEPAGE=()=>{
                 <p onclick='CONTACTUSPAGEROUTR()'>Contact Us</p>
             
             </div>
+
+            <button onclick='DIRECTDONATE()' class='SendMessage'>Support Us</button>
 
             <h1>Welcome</h1>
 
@@ -68,43 +74,55 @@ const HOMEPAGE=()=>{
 
 };
 
+const DIRECTDONATE=()=>{
+
+    STOREDATA('','Direct','True');
+
+    DONATEPAGEROUTER();
+
+};
+
 const PARTHNERS=()=>{
 
-    const ParthnersDiv=NAMING('.ParthnersDiv');
+    CHECKER(navigator.onLine,()=>{
 
-    GETDATA(API,'Parthers',(data)=>{
+        const ParthnersDiv=NAMING('.ParthnersDiv');
 
-        DISPLAY(ParthnersDiv,'');
+        GETDATA(API,'Parthers',(data)=>{
 
-        REDUX(data,(element)=>{
+            DISPLAY(ParthnersDiv,'');
 
-            CREATEELEMENT(ParthnersDiv,'div','ParthnerMiniDivs',(ELEMENT)=>{
+            REDUX(data,(element)=>{
 
-                DISPLAY(ELEMENT,`
+                CREATEELEMENT(ParthnersDiv,'div','ParthnerMiniDivs',(ELEMENT)=>{
 
-                    <img src='${element.Logo||APPLOGO}'/>
+                    DISPLAY(ELEMENT,`
 
-                    <footer class='ParthnerFooter'>
-                    
-                        <p>${element.Name}</p>
+                        <img src='${element.Logo||APPLOGO}'/>
 
-                    </footer>
-                    
-                `);
+                        <footer class='ParthnerFooter'>
+                        
+                            <p>${element.Name}</p>
 
-                CLICK(ELEMENT,()=>{
+                        </footer>
+                        
+                    `);
 
-                    WEBSITE(element.Link);
+                    CLICK(ELEMENT,()=>{
+
+                        WEBSITE(element.Link);
+
+                    });
 
                 });
 
             });
 
+        },(data)=>{
+
+            console.log(data);
+
         });
-
-    },(data)=>{
-
-        console.log(data);
 
     });
 
@@ -148,11 +166,11 @@ const DEVELOPERPAGE=()=>{
 
                 <p class='ServicesSection' >Elite Pay</p>
 
-                <p class='ServicesSection'>Elite Frame Work</p>
+                <p class='ServicesSection'>Nova </p>
             
             </div>
 
-            <br>
+            <br><br>
 
             <p>Under Development</p>
         
@@ -186,13 +204,13 @@ const CONTACTUSPAGE=()=>{
 
             <h1>Fill the Form </h1>
 
-            <input class='RoundInput' type='text' placeholder='Enter Your Name'/>
+            <input id='Name' class='RoundInput' type='text' placeholder='Enter Your Name'/>
 
-            <input class='RoundInput' type='email' placeholder='Enter Your Email'/>
+            <input id='Email' class='RoundInput' type='email' placeholder='Enter Your Email'/>
 
-            <input class='RoundInput' type='text' placeholder='Provide Subject'/>
+            <input id='Subject' class='RoundInput' type='text' placeholder='Provide Subject'/>
 
-            <textarea placeholder='Compose Message'></textarea>
+            <textarea id='Message' placeholder='Compose Message'></textarea>
 
             <button class='SendMessage'>Send</button>
 
@@ -201,6 +219,48 @@ const CONTACTUSPAGE=()=>{
         </div>
         
     `);
+
+    const Name=NAMING('#Name');
+    const Email=NAMING('#Email');
+    const Subject=NAMING('#Subject');
+    const Message=NAMING('#Message');
+    const SendMessage=NAMING('.SendMessage');
+
+    CLICK(SendMessage,()=>{
+
+        CONDITION(Name.value,()=>{
+    
+            CONDITION(Email.value,()=>{
+    
+                CONDITION(Subject.value,()=>{
+
+                    CONDITION(Message.value,()=>{
+    
+                    },()=>{
+        
+                        TOAST('Please Enter Your Message');
+        
+                    });
+    
+                },()=>{
+    
+                    TOAST('Please Enter Your Subject');
+    
+                });
+    
+            },()=>{
+    
+                TOAST('Please Enter Your Email');
+    
+            });
+    
+        },()=>{
+    
+            TOAST('Please Enter Your Name');
+    
+        });
+
+    });
 
 };
 
@@ -212,13 +272,17 @@ const ABOUTUSPAGEROUTER=()=>{
 
 const ABOUTUSPAGE=()=>{
 
+    BACKPAGE('HOMEPAGE');
+
     DISPLAY('',`
 
         <header>
 
             <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
         
-            <p class='RightText'>Contact Us</p>
+            <h1 onclick='DONATEPAGEROUTER()' class='DonateSection'>Donate</h1>
+
+            <p class='RightText'>About Us</p>
 
         </header>
 
@@ -231,9 +295,187 @@ const ABOUTUSPAGE=()=>{
             <br>
 
             <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Company that Ventures in the Following Sections.</p>
+
+            <br>
+            
+            <button class='InlineButton'>
+
+                <p class='LeftText'>Mobile App Development</p>
+
+                <img class='RightIcon' src='${WHITEMOBILEDEVELOPMENTICON}'/>
+            
+            </button>
+
+            <button class='InlineButton'>
+
+                <p class='LeftText'>Desktop App Development</p>
+
+                <img class='RightIcon' src='${WHITESCREENICON}'/>
+            
+            </button>
+
+            <button class='InlineButton'>
+
+                <p class='LeftText'>Web Site Development</p>
+
+                <img class='RightIcon' src='${WHITEINTERNETICON}'/>
+            
+            </button>
+
+            <button class='InlineButton'>
+
+                <p class='LeftText'>System Design and Development</p>
+
+                <img class='RightIcon' src='${WHITEDEVICEICON}'/>
+            
+            </button>
+
+            <h3>Mission</h3>
+
+            <br>
+
+            <p class='LeftText'>To Provide and Power Well Established and Auto Updating Systems that Make Service Delivery Fast,Reliable and Simple</p>
+
+            <br>
+
+            <h3>Vision</h3>
+
+            <br>
+
+            <p>Imagine .Innovate .Inspire</p>
+
+            <br>
+
+            <h2>Aim</h2>
+
+            <br>
+
+            <p class='LeftText'>Africa's First Cloud Native Developer Platform that is Aimed to Simplify the Works of the Developers and Customers with Seamless Intergration Software and Service to Customers Daily.</p>
+
+            <br><br>
         
         </div>
         
     `);
+
+};
+
+const DONATEPAGEROUTER=()=>{
+
+    CONDITION(sessionStorage.getItem('Direct'),()=>{
+
+        ROUTE(' ',DONATEPAGE,'HOMEPAGE');
+
+    },()=>{
+
+        ROUTE(' ',DONATEPAGE,'ABOUTUSPAGE');
+
+    });
+
+};
+
+const BACKDONATEPAGE=()=>{
+
+    CONDITION(sessionStorage.getItem('Direct'),()=>{
+
+        HOMEPAGEROUTER();
+
+    },()=>{
+
+        ABOUTUSPAGEROUTER();
+
+    });
+
+};
+
+const DONATEPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='BACKDONATEPAGE()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+            <p class='RightText'>Donate</p>
+
+        </header>
+
+        <div id='SectionDiv' class='RelativeDiv'>
+
+            <br>
+
+            <h1>Donation Event</h1>
+
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology is Conducting Donations For the Cloud Native Platform,Join Us to Make the Developers experience seamless and Intergration Better of Servces to Your Platform For Free.</p>
+            
+            <br>
+            
+            <p>Enter Amount From 1 dollar</p>
+
+            <input class='RoundInput' type='tel' placeholder='Enter Amount From 1 Dollar'/>
+
+            <button class='SendMessage'>Donate</button>
+
+        </div>
+        
+    `);
+
+    const DONATEAMOUNT=NAMING('.RoundInput');
+
+    const SEND=NAMING('.SendMessage');
+
+    FUNCTIONED(DONATEAMOUNT,'input',()=>{
+
+        DOLLAREXCHANGE('UGX',DONATEAMOUNT.value,(data)=>{
+
+            console.log(data);
+
+            CHECKER(data < 1,()=>{
+
+                TOAST('Donate Mininium is 1 USD');
+
+            });
+
+        });
+
+    });
+
+    CLICK(SEND,()=>{
+
+        CONDITION(DONATEAMOUNT.value,()=>{
+
+            FUNCTIONED(DONATEAMOUNT,'input',()=>{
+
+                DOLLAREXCHANGE('UGX',DONATEAMOUNT.value,(data)=>{
+
+                    CONDITION(data < 1,()=>{
+
+                        TOAST('Donate Mininium is 1 USD');
+
+                    } ,()=>{
+
+                        TOAST('Please Wait');
+
+                        ELITEPAY('Elite','eroinnovations9@gmail.com',DONATEAMOUNT.value,'Donation','https://eroinnovations.site/AfterPay.html',new Date(),'https://eroinnovations.site',(data)=>{
+
+                            WEBSITE(data);
+
+                        });
+
+                    });
+
+                });
+
+            });
+
+        },()=>{
+
+            TOAST('Enter Donation Amount');
+
+        });
+
+    });
 
 };

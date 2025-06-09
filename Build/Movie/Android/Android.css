@@ -1,0 +1,18 @@
+.AppName{
+    font-size: 30px;
+    color: red;
+}
+
+.LoginButton{
+    background: forestgreen;
+}
+
+#OptionsHolder{
+    display: inline-flex;
+}
+
+.OptionButtons{
+    width: 45%;
+    margin: auto;
+    border: 1px solid #cdcdcd50;
+}
