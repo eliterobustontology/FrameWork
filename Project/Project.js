@@ -191,6 +191,43 @@ const HOMEPAGE=()=>{
 
             <p id='QuraBanMessage' class='CenterText'>Sharing Quran is swadaqatul-jariya in which whoever gives one receives a reward from whenever someone recites it.</p>
 
+            <br>
+            <h1>Support Our Mission</h1>
+            <br>
+            <p>Your contributions can change lives. Donate now to make a difference.</p>
+
+            <button class='HomeDonateSection'>Donate Now</button>
+
+            <br><br>
+            
+            <h1>What People Say</h1>
+
+            <br>
+
+            <p>"This organization has transformed our community. Thank you for your kindness!"</p>
+
+            <br>
+
+            <h1>A Grateful Beneficiary</h1>
+
+            <br>
+
+            <p>"Seeing these children smile because of your efforts is priceless."</p>
+
+            <br>
+
+            <div id='ContactHolder' class='TopNav'>
+
+                <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+            
+            </div>
+
             <br><br>
 
             <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
