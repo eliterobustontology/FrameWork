@@ -30,7 +30,9 @@ const HOMEPAGE=()=>{
 
             <img class='AppLogo' src='${APPLOGO}'/>
 
+            <p>Imagine.Innovate.Inspire</p>
 
+            <br>
        
             <div class='TopNav'>
 
@@ -44,6 +46,8 @@ const HOMEPAGE=()=>{
 
             <button onclick='DIRECTDONATE()' class='SendMessage'>Support Us</button>
 
+            <br><br>
+
             <h1>Welcome</h1>
 
             <br>
@@ -56,7 +60,7 @@ const HOMEPAGE=()=>{
 
             <br>
 
-            <h1>Our Parthners</h1>
+            <h1>Our Partners</h1>
 
             <br>
 
@@ -65,6 +69,8 @@ const HOMEPAGE=()=>{
                 <p>...Please Wait...</p>
         
             </div>
+
+            <br><br>
 
         </div>
         
@@ -450,17 +456,19 @@ const DONATEPAGE=()=>{
 
                 DOLLAREXCHANGE('UGX',DONATEAMOUNT.value,(data)=>{
 
-                    CONDITION(data < 1,()=>{
+                    CHECKER(data < 1,()=>{
 
                         TOAST('Donate Mininium is 1 USD');
 
-                    } ,()=>{
+                    });
+
+                    CHECKER(data > 1,()=>{
 
                         TOAST('Please Wait');
 
-                        ELITEPAY('Elite','eroinnovations9@gmail.com',DONATEAMOUNT.value,'Donation','https://eroinnovations.site/AfterPay.html',new Date(),'https://eroinnovations.site',(data)=>{
+                        ELITEPAY('Elite','eroinnovations9@gmail.com',DONATEAMOUNT.value,'Donation','https://eroinnovations.site/AfterPay.html',new Date(),'https://eroinnovations.site',(dataLink)=>{
 
-                            WEBSITE(data);
+                            WEBSITE(dataLi);
 
                         });
 
