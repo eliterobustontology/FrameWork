@@ -241,7 +241,33 @@ const CONTACTUSPAGE=()=>{
                 CONDITION(Subject.value,()=>{
 
                     CONDITION(Message.value,()=>{
+
+                        TOAST('Please Wait');
+
+                        DEVICE((deviced)=>{
+
+                            const HEADERS=['Name','Email','Subject','Message','Device','Time'];
     
+                            const INFO=[Name.value,Email.value,Subject.value,Message.value,deviced,new Date()];
+    
+                            INSERTDATA(API,'Contacts',HEADERS,INFO,(ReturnedData)=>{
+
+                                TOAST('We shall Contact You Shortly');
+
+                                HIDER(2000,()=>{
+
+                                    CONTACTUSPAGEROUTR();
+
+                                });
+    
+                            },()=>{
+
+                                TOAST('Something Went Wrong,Try Again.');
+    
+                            });
+
+                        });
+
                     },()=>{
         
                         TOAST('Please Enter Your Message');
@@ -436,11 +462,15 @@ const DONATEPAGE=()=>{
 
         DOLLAREXCHANGE('UGX',DONATEAMOUNT.value,(data)=>{
 
-            console.log(data);
-
-            CHECKER(data < 1,()=>{
+            CONDITION(data < 1,()=>{
 
                 TOAST('Donate Mininium is 1 USD');
+
+                DELETEDATA('','AmountDonated');
+
+            },()=>{
+
+                STOREDATA('','AmountDonated',data);
 
             });
 
@@ -448,40 +478,30 @@ const DONATEPAGE=()=>{
 
     });
 
-    CLICK(SEND,()=>{
+    FUNCTIONED(SEND,'click',()=>{
 
         CONDITION(DONATEAMOUNT.value,()=>{
 
-            FUNCTIONED(DONATEAMOUNT,'input',()=>{
-
-                DOLLAREXCHANGE('UGX',DONATEAMOUNT.value,(data)=>{
-
-                    CHECKER(data < 1,()=>{
-
-                        TOAST('Donate Mininium is 1 USD');
-
-                    });
-
-                    CHECKER(data > 1,()=>{
-
-                        TOAST('Please Wait');
-
-                        ELITEPAY('Elite','eroinnovations9@gmail.com',DONATEAMOUNT.value,'Donation','https://eroinnovations.site/AfterPay.html',new Date(),'https://eroinnovations.site',(dataLink)=>{
-
-                            WEBSITE(dataLi);
-
-                        });
-
-                    });
-
+            CONDITION(DONATEAMOUNT.value >=1,()=>{
+    
+                TOAST('Please Wait');
+                        
+                ELITEPAY('Elite','eroinnovations9@gmail.com',sessionStorage.getItem('AmountDonated'),'Donation','https://eroinnovations.site/AfterPay.html',new Date(),'https://eroinnovations.site',(dataLink)=>{
+                            
+                    WEBSITE(dataLink);
+                            
                 });
+                        
+            },()=>{
+                        
+                TOAST('Donate Mininium is 1 USD');
 
             });
-
+    
         },()=>{
-
+    
             TOAST('Enter Donation Amount');
-
+    
         });
 
     });
