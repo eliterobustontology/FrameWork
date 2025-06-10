@@ -1,230 +1,16 @@
+const APPLOGO='https://eroinnovations.github.io/FrameWork/Library/Assets/Images/Posts/Elite/CompanyLogo.png';
+
+const API='https://docs.google.com/spreadsheets/d/1QrPMVra0WEB1L_JWpZyvm1WRoVaSlJk7KFiJiCOgYOQ/edit?usp=sharing';
+
 const NOVASTART=()=>{
 
-    OPERATINGSYSTEM();
+    VISITOR(API,'Visitors');
 
-    //ACCOUNTCHECKER(HOMEPAGEROUTER(),EMAILVERIFICATIONPAGEROUTER(),LOGINPAGEROUTER());
+    BODY();
 
-    HOMEPAGEROUTER();
+    APPMODE('#333333');
 
-};
-
-const LOGINPAGEROUTER=()=>{
-
-    ROUTE('',LOGINPAGE,'LOGINPAGE');
-
-};
-
-const LOGINPAGE=()=>{
-
-    DISPLAY('',`
-
-        <br><br>
-
-        <h1 class='AppName'>Movifiy</h1>
-
-        <br>
-
-        <p>Watch.Save.Share</p>
-
-        <br>
-
-        <h3>Login to Watch</h3>
-
-        <br>
-
-        <input class='RoundInput' type='email' placeholder='UserEmail'/>
-
-        <input class='RoundInput' type='password' placeholder='*********'/>
-
-        <button class='LoginButton' onclick='HOMEPAGEROUTER()'>LogIn</button>
-
-        <br><br
-
-        <h1>OR</h1>
-
-        <br><br>
-
-        <div id='OptionsHolder' class='TopNav'>
-
-           <button onclick='RESETPASSWORDROUTER()' class='OptionButtons'>Reset Password</button>
-           
-           <button onclick='CREATEACCOUNTPAGEROUTER()' class='OptionButtons'>Create Account</button>   
-        
-        </div>
-        
-    `);
-
-};
-
-const CREATEACCOUNTPAGEROUTER=()=>{
-
-    ROUTE(' ',CREATEACCOUNTPAGE,'LOGINPAGE');
-
-};
-
-const CREATEACCOUNTPAGE=()=>{
-
-    DISPLAY('',`
-
-        <br><br>
-
-        <h1 class='AppName'>Movifiy</h1>
-
-        <br>
-
-        <p>Watch.Save.Share</p>
-
-        <br>
-
-        <h3>Create to Watch</h3>
-
-        <br>
-
-        <input class='RoundInput' type='text' placeholder='UserName'/>
-
-        <input class='RoundInput' type='email' placeholder='UserEmail'/>
-
-        <input class='RoundInput' type='password' placeholder='*********'/>
-
-        <button class='LoginButton'>Create Account</button>
-
-        <br><br
-
-        <h1>OR</h1>
-
-        <br><br>
-
-        <div id='OptionsHolder' class='TopNav'>
-
-           <button onclick='ACCOUNTPOLICIESPAGEROUTE()' class='OptionButtons'>Policies</button>
-           
-           <button onclick='LOGINPAGEROUTER()' class='OptionButtons'>Log In</button>   
-        
-        </div>
-        
-    `);
-
-};
-
-const RESETPASSWORDROUTER=()=>{
-
-    ROUTE(' ',RESETPASSWORD,'LOGINPAGE');
-
-};
-
-const RESETPASSWORD=()=>{
-
-    DISPLAY('',`
-
-        <br><br>
-
-        <h1 class='AppName'>Movifiy</h1>
-
-        <br>
-
-        <p>Watch.Save.Share</p>
-
-        <br>
-
-        <h3>Reset to Watch</h3>
-
-        <br>
-
-        <input class='RoundInput' type='email' placeholder='UserEmail'/>
-
-        <button class='LoginButton'>Recover Account</button>
-
-        <br><br
-
-        <h1>OR</h1>
-
-        <br><br>
-
-        <div id='OptionsHolder' class='TopNav'>
-
-           <button onclick='LOGINPAGEROUTER()' class='OptionButtons'>Log In</button>
-           
-           <button onclick='CREATEACCOUNTPAGEROUTER()' class='OptionButtons'>Create Account</button>   
-        
-        </div>
-        
-    `);
-
-};
-
-const EMAILVERIFICATIONPAGEROUTER=()=>{
-
-    ROUTE('',EMAILVERIFICATIONPAGE,'EMAILVERIFICATIONPAGE');
-
-};
-
-const EMAILVERIFICATIONPAGE=()=>{
-
-    DISPLAY('',`
-
-        <br><br>
-
-        <h1 class='AppName'>Movifiy</h1>
-
-        <br>
-
-        <p>Watch.Save.Share</p>
-
-        <br>
-
-        <h3>Verify to Watch</h3>
-
-        <br>
-
-        <input class='RoundInput' type='tel' placeholder='Verification Code'/>
-
-        <button class='LoginButton'>Verify</button>
-
-        <br><br
-
-        <h1>OR</h1>
-
-        <br><br>
-
-        <div id='OptionsHolder' class='TopNav'>
-
-           <button onclick='LOGINPAGEROUTER()' class='OptionButtons'>Resend Code</button>
-           
-           <button onclick='CREATEACCOUNTPAGEROUTER()' class='OptionButtons'>Wrong Email</button>   
-        
-        </div>
-        
-    `);
-
-};
-
-const ACCOUNTPOLICIESPAGEROUTE=()=>{
-
-    ROUTE(' ',ACCOUNTPOLICIESPAGE,'CREATEACCOUNTPAGE');
-
-};
-
-const ACCOUNTPOLICIESPAGE=()=>{
-
-    DISPLAY('',`
-
-        <header>
-
-            <img onclick='CREATEACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
-        
-            <p class='RightText'>Policies</p>
-
-        </header>
-
-        <div class='HeaderDiv'>
-
-            <br>
-
-            <h1>Welcome</h1>
-        
-        </div>
-
-    `);
+    ROUTE('',HOMEPAGE,HOMEPAGE);
 
 };
 
@@ -236,237 +22,173 @@ const HOMEPAGEROUTER=()=>{
 
 const HOMEPAGE=()=>{
 
-    DISPLAY('',`
-
-        <div class='HomeDiv'>
-
-            <div class='TrendingMovie'></div>
-
-            <div class='TopNav'>
-
-                <h1 class='LeftText'>Aminations</h1>
-
-                <img class='RightIcon' src='${WHITENEXTICON}'/>
-            
-            </div>
-
-            <div class='TrendingMovie'></div>
-
-            <div class='TopNav'>
-
-                <h1 class='LeftText'>Movies</h1>
-
-                <img class='RightIcon' src='${WHITENEXTICON}'/>
-            
-            </div>
-
-            <div class='TrendingMovie'></div>
-
-            <div class='TrendingMovie'></div>
-
-            <div class='TopNav'>
-
-                <h1 class='LeftText'>Nigerian</h1>
-
-                <img class='RightIcon' src='${WHITENEXTICON}'/>
-            
-            </div>
-
-            <div class='TrendingMovie'></div>
-
-            <br><br><br>
-        
-        </div>
-        
-        <footer class='RoundFooter'>
-
-            <div class='FooterImageDiv'>
-
-                <img class='Icon' src='${WHITELIBRARYICON}'/>
-
-                <p>Catergories</p>
-            
-            </div>
-
-            <div class='FooterImageDiv'>
-
-                <img class='Icon' src='${WHITESCREENICON}'/>
-
-                <p>Watch</p>
-            
-            </div>
-
-            <div class='FooterImageDiv' onclick='USERACCOUNTPAGEROUTER()'>
-
-                <img class='Icon' src='${WHITEUSERICON}'/>
-
-                <p> Account</p>
-            
-            </div>
-        
-        </footer>
-        
-    `);
-
-};
-
-const USERACCOUNTPAGEROUTER=()=>{
-
-    ROUTE(' ',USERACCOUNTPAGE,'HOMEPAGE');
-
-};
-
-const USERACCOUNTPAGE=()=>{
-
-    BACKPAGE('HOMEPAGE');
+    DELETEDATA('','Direct');
 
     DISPLAY('',`
 
-        <header>
+        <div class='RelativeDiv'>
 
-            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITESINGLEBACKICON}'/>
-        
-            <p class='RightText'>Profile</p>
+            <img class='AppLogo' src='${APPLOGO}'/>
 
-        </header>
+            <p>Imagine.Innovate.Inspire</p>
 
-        <div class='HeaderDiv'>
+            <br>
+       
+            <div class='TopNav'>
 
-            <div class='TrendingMovie'></div>
+                <p onclick='ABOUTUSPAGEROUTER()' >About Us</p>
 
-            <button class='InlineButton' onclick='COMMUNITYPAGEROUTER()'>
+                <p onclick='DEVELOPERPAGEROUTR()'>Developers</p>
 
-                <p class='LeftText'>Community</p>
+                <p onclick='CONTACTUSPAGEROUTR()'>Contact Us</p>
+            
+            </div>
 
-                <img class='RightIcon' src='${WHITEGROUPICON}'/>
+            <button onclick='DIRECTDONATE()' class='SendMessage'>Support Us</button>
 
-            </button>
+            <br><br>
 
-            <button class='InlineButton' onclick='BUSINESSPAGEROUTER()'>
-
-                <p class='LeftText'>Business</p>
-
-                <img class='RightIcon' src='${WHITECREATEDONICON}'/>
-
-            </button>
-
-            <button class='InlineButton' onclick='NOTIFICATIONSPAGEROUTER()'>
-
-                <p class='LeftText'>Notifications</p>
-
-                <img class='RightIcon' src='${WHITENOTIFICATIONICON}'/>
-
-            </button>
-
-            <button class='InlineButton' onclick='SETTINGSPAGEROUTER()'>
-
-                <p class='LeftText'>Settings</p>
-
-                <img class='RightIcon' src='${WHITESETTINGSICON}'/>
-
-            </button>
-
-            <button class='InlineButton' onclick='USERACCOUNTPOLICIESPAGEROUTER()'>
-
-                <p class='LeftText'>Privacy Policy</p>
-
-                <img class='RightIcon' src='${WHITEPRIVACYPOLICYICON}'/>
-
-            </button>
-
-            <button class='InlineButton' onclick='HELPPAGEROUTER()'>
-
-                <p class='LeftText'>Help</p>
-
-                <img class='RightIcon' src='${WHITEHELPICON}'/>
-
-            </button>
-
-            <button class='InlineButton' onclick='CONTACTUSPAGEROUTER()'>
-
-                <p class='LeftText'>Contact Us</p>
-
-                <img class='RightIcon' src='${WHITEPHONEICON}'/>
-
-            </button>
-
-            <button class='InlineButton' onclick='DEVELOPERPAGEROUTER()'>
-
-                <p class='LeftText'>Developer</p>
-
-                <img class='RightIcon' src='${WHITEMOBILEDEVELOPMENTICON}'/>
-
-            </button>
-        
-        </div>
-        
-    `);
-
-};
-
-const USERACCOUNTPOLICIESPAGEROUTER=()=>{
-
-    ROUTE(' ',USERACCOUNTPOLICYPAGE,'USERACCOUNTPAGE');
-
-};
-
-const USERACCOUNTPOLICYPAGE=()=>{
-
-    DISPLAY('',`
-
-        <header>
-
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
-        
-            <p class='RightText'>Policies</p>
-
-        </header>
-
-        <div class='HeaderDiv'>
+            <h1>Welcome</h1>
 
             <br>
 
-            <h1>Welcome</h1>
-        
-        </div>
+            <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Company Located In Mbale and We Venture in <b>Mobile App Development</b>,<b>Desktop Software Development</b>,<b>Website Development</b> and <b>System Design and Development</b>.</p>
 
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology has Ventured in Many Projects and Parthered with many Companies to Digitilise there Business and Enterprises and here is a list of Parther Companies that we Power with Various Solutions.</p>
+
+            <br>
+
+            <h1>Our Partners</h1>
+
+            <br>
+
+            <div class='ParthnersDiv'>
+
+                <p>...Please Wait...</p>
+        
+            </div>
+
+            <br><br>
+
+        </div>
+        
     `);
 
-};
-
-const HELPPAGEROUTER=()=>{
-
-    ROUTE(' ',HELPPOLICYPAGE,'USERACCOUNTPAGE');
+    PARTHNERS();
 
 };
 
-const HELPPOLICYPAGE=()=>{
+const DIRECTDONATE=()=>{
+
+    STOREDATA('','Direct','True');
+
+    DONATEPAGEROUTER();
+
+};
+
+const PARTHNERS=()=>{
+
+    CHECKER(navigator.onLine,()=>{
+
+        const ParthnersDiv=NAMING('.ParthnersDiv');
+
+        GETDATA(API,'Parthers',(data)=>{
+
+            DISPLAY(ParthnersDiv,'');
+
+            REDUX(data,(element)=>{
+
+                CREATEELEMENT(ParthnersDiv,'div','ParthnerMiniDivs',(ELEMENT)=>{
+
+                    DISPLAY(ELEMENT,`
+
+                        <img src='${element.Logo||APPLOGO}'/>
+
+                        <footer class='ParthnerFooter'>
+                        
+                            <p>${element.Name}</p>
+
+                        </footer>
+                        
+                    `);
+
+                    CLICK(ELEMENT,()=>{
+
+                        WEBSITE(element.Link);
+
+                    });
+
+                });
+
+            });
+
+        },(data)=>{
+
+            console.log(data);
+
+        });
+
+    });
+
+};
+
+const DEVELOPERPAGEROUTR=()=>{
+
+    ROUTE(' ',DEVELOPERPAGE,'HOMEPAGE');
+
+};
+
+const DEVELOPERPAGE=()=>{
 
     DISPLAY('',`
 
         <header>
 
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
         
-            <p class='RightText'>Help</p>
+            <p class='RightText'>Developers</p>
 
         </header>
 
-        <div class='HeaderDiv'>
+        <div id='SectionDiv' class='RelativeDiv'>
 
             <br>
 
-            <h1>Welcome</h1>
+            <h1>Welcome Developer</h1>
+
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology also wants to help Developers focus on there craft thus we developed Plugins to Speed up your Work and Even allow developers to use our services thus enable Progress in cloud native technology.
+            <br><br>
+            Please readmore about our products and services, we provide to developers and how to install and use them below.</p>
+
+            <br>
+
+            <div class='TopNav'>
+
+                <p class='ServicesSection'>Elite Store</p>
+
+                <p class='ServicesSection' >Elite Pay</p>
+
+                <p class='ServicesSection'>Nova </p>
+            
+            </div>
+
+            <br><br>
+
+            <p>Under Development</p>
         
         </div>
-
+        
     `);
 
 };
 
-const CONTACTUSPAGEROUTER=()=>{
+const CONTACTUSPAGEROUTR=()=>{
 
-    ROUTE(' ',CONTACTUSPAGE,'USERACCOUNTPAGE');
+    ROUTE(' ',CONTACTUSPAGE,'HOMEPAGE');
 
 };
 
@@ -476,274 +198,312 @@ const CONTACTUSPAGE=()=>{
 
         <header>
 
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
         
             <p class='RightText'>Contact Us</p>
 
         </header>
 
-        <div class='HeaderDiv'>
+        <div id='SectionDiv' class='RelativeDiv'>
 
-            <button class='InlineButton'>
+            <br>
 
-                <p class='LeftText'>Email Us</p>
+            <h1>Fill the Form </h1>
 
-                <img class='RightIcon' src='${WHITEGMAILICON}'/>
+            <input id='Name' class='RoundInput' type='text' placeholder='Enter Your Name'/>
 
-            </button>
+            <input id='Email' class='RoundInput' type='email' placeholder='Enter Your Email'/>
 
-            <button class='InlineButton'>
+            <input id='Subject' class='RoundInput' type='text' placeholder='Provide Subject'/>
 
-                <p class='LeftText'>Call Us</p>
+            <textarea id='Message' placeholder='Compose Message'></textarea>
 
-                <img class='RightIcon' src='${WHITEPHONEICON}'/>
-
-            </button>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>Visit Our Site</p>
-
-                <img class='RightIcon' src='${WHITEINTERNETICON}'/>
-
-            </button>
+            <button class='SendMessage'>Send</button>
 
             <br><br>
-
-            <p>Powered By Elite Robust Ontology</p>
             
         </div>
-
+        
     `);
 
+    const Name=NAMING('#Name');
+    const Email=NAMING('#Email');
+    const Subject=NAMING('#Subject');
+    const Message=NAMING('#Message');
+    const SendMessage=NAMING('.SendMessage');
+
+    CLICK(SendMessage,()=>{
+
+        CONDITION(Name.value,()=>{
+    
+            CONDITION(Email.value,()=>{
+    
+                CONDITION(Subject.value,()=>{
+
+                    CONDITION(Message.value,()=>{
+
+                        TOAST('Please Wait');
+
+                        DEVICE((deviced)=>{
+
+                            const HEADERS=['Name','Email','Subject','Message','Device','Time'];
+    
+                            const INFO=[Name.value,Email.value,Subject.value,Message.value,deviced,new Date()];
+    
+                            INSERTDATA(API,'Contacts',HEADERS,INFO,(ReturnedData)=>{
+
+                                TOAST('We shall Contact You Shortly');
+
+                                HIDER(2000,()=>{
+
+                                    CONTACTUSPAGEROUTR();
+
+                                });
+    
+                            },()=>{
+
+                                TOAST('Something Went Wrong,Try Again.');
+    
+                            });
+
+                        });
+
+                    },()=>{
+        
+                        TOAST('Please Enter Your Message');
+        
+                    });
+    
+                },()=>{
+    
+                    TOAST('Please Enter Your Subject');
+    
+                });
+    
+            },()=>{
+    
+                TOAST('Please Enter Your Email');
+    
+            });
+    
+        },()=>{
+    
+            TOAST('Please Enter Your Name');
+    
+        });
+
+    });
+
 };
 
-const DEVELOPERPAGEROUTER=()=>{
+const ABOUTUSPAGEROUTER=()=>{
 
-    ROUTE(' ',DEVELOPERPAGEPAGE,'USERACCOUNTPAGE');
+    ROUTE(' ',ABOUTUSPAGE,'HOMEPAGE');
 
 };
 
-const DEVELOPERPAGEPAGE=()=>{
+const ABOUTUSPAGE=()=>{
+
+    BACKPAGE('HOMEPAGE');
 
     DISPLAY('',`
 
         <header>
 
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
         
-            <p class='RightText'>Developers</p>
+            <h1 onclick='DONATEPAGEROUTER()' class='DonateSection'>Donate</h1>
+
+            <p class='RightText'>About Us</p>
 
         </header>
 
-        <div class='HeaderDiv'>
+        <div id='SectionDiv' class='RelativeDiv'>
 
             <br>
 
-            <h1>Welcome</h1>
-        
-        </div>
-
-    `);
-
-};
-
-const NOTIFICATIONSPAGEROUTER=()=>{
-
-    ROUTE(' ',NOTIFICATIONSPAGEPAGE,'USERACCOUNTPAGE');
-
-};
-
-const NOTIFICATIONSPAGEPAGE=()=>{
-
-    DISPLAY('',`
-
-        <header>
-
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
-        
-            <p class='RightText'>Notifications</p>
-
-        </header>
-
-        <div class='HeaderDiv'>
+            <h1>Who are We?</h1>
 
             <br>
 
-            <h1>Welcome</h1>
-        
-        </div>
+            <p class='LeftText'>Elite Robust Ontology is a Cloud Native Based Company that Ventures in the Following Sections.</p>
 
-    `);
-
-};
-
-const BUSINESSPAGEROUTER=()=>{
-
-    ROUTE(' ',BUSINESSPAGEPAGE,'USERACCOUNTPAGE');
-
-};
-
-const BUSINESSPAGEPAGE=()=>{
-
-    DISPLAY('',`
-
-        <header>
-
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
-        
-            <p class='RightText'>Business</p>
-
-        </header>
-
-        <div class='HeaderDiv'>
-
+            <br>
+            
             <button class='InlineButton'>
 
-                <p class='LeftText'>Advertise With Us</p>
+                <p class='LeftText'>Mobile App Development</p>
 
-                <img class='RightIcon' src='${WHITEMEGAPHONEICON}'/>
-
+                <img class='RightIcon' src='${WHITEMOBILEDEVELOPMENTICON}'/>
+            
             </button>
 
             <button class='InlineButton'>
 
-                <p class='LeftText'>Donate</p>
+                <p class='LeftText'>Desktop App Development</p>
 
-                <img class='RightIcon' src='${WHITESUBSCRIPTIONICON}'/>
-
+                <img class='RightIcon' src='${WHITESCREENICON}'/>
+            
             </button>
 
             <button class='InlineButton'>
 
-                <p class='LeftText'>Share Holder</p>
+                <p class='LeftText'>Web Site Development</p>
 
-                <img class='RightIcon' src='${WHITEADDPERSONICON}'/>
-
+                <img class='RightIcon' src='${WHITEINTERNETICON}'/>
+            
             </button>
 
             <button class='InlineButton'>
 
-                <p class='LeftText'>Sell With Us </p>
+                <p class='LeftText'>System Design and Development</p>
 
-                <img class='RightIcon' src='${WHITESECRETCODEICON}'/>
-
-            </button>
-        
-        </div>
-
-    `);
-
-};
-
-const SETTINGSPAGEROUTER=()=>{
-
-    ROUTE(' ',SETTINGSPAGE,'USERACCOUNTPAGE');
-
-};
-
-const SETTINGSPAGE=()=>{
-
-    DISPLAY('',`
-
-        <header>
-
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
-        
-            <p class='RightText'>Settings</p>
-
-        </header>
-
-        <div class='HeaderDiv'>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>App Mode</p>
-
-                <img class='RightIcon' src='${WHITECONTRASTICON}'/>
-
+                <img class='RightIcon' src='${WHITEDEVICEICON}'/>
+            
             </button>
 
-            <button class='InlineButton'>
-
-                <p class='LeftText'>App Lock</p>
-
-                <img class='RightIcon' src='${WHITELOCKICON}'/>
-
-            </button>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>App Version </p>
-
-                <img class='RightIcon' src='${WHITEAPPICON}'/>
-
-            </button>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>App Sync </p>
-
-                <img class='RightIcon' src='${WHITERETRYICON}'/>
-
-            </button>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>Parental Control</p>
-
-                <img class='RightIcon' src='${WHITEPARENTALCONTROL}'/>
-
-            </button>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>Delete Account</p>
-
-                <img class='RightIcon' src='${WHITEDELETEICON}'/>
-
-            </button>
-
-            <button class='InlineButton'>
-
-                <p class='LeftText'>Log Out</p>
-
-                <img class='RightIcon' src='${WHITELOGOUTICON}'/>
-
-            </button>
-        
-        </div>
-
-    `);
-
-};
-
-const COMMUNITYPAGEROUTER=()=>{
-
-    ROUTE(' ',COMMUNITYPAGE,'USERACCOUNTPAGE');
-
-};
-
-const COMMUNITYPAGE=()=>{
-
-    DISPLAY('',`
-
-        <header>
-
-            <img onclick='USERACCOUNTPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
-        
-            <p class='RightText'>Community</p>
-
-        </header>
-
-        <div class='HeaderDiv'>
+            <h3>Mission</h3>
 
             <br>
 
-            <h1>Welcome</h1>
+            <p class='LeftText'>To Provide and Power Well Established and Auto Updating Systems that Make Service Delivery Fast,Reliable and Simple</p>
+
+            <br>
+
+            <h3>Vision</h3>
+
+            <br>
+
+            <p>Imagine .Innovate .Inspire</p>
+
+            <br>
+
+            <h2>Aim</h2>
+
+            <br>
+
+            <p class='LeftText'>Africa's First Cloud Native Developer Platform that is Aimed to Simplify the Works of the Developers and Customers with Seamless Intergration Software and Service to Customers Daily.</p>
+
+            <br><br>
         
         </div>
-
+        
     `);
+
+};
+
+const DONATEPAGEROUTER=()=>{
+
+    CONDITION(sessionStorage.getItem('Direct'),()=>{
+
+        ROUTE(' ',DONATEPAGE,'HOMEPAGE');
+
+    },()=>{
+
+        ROUTE(' ',DONATEPAGE,'ABOUTUSPAGE');
+
+    });
+
+};
+
+const BACKDONATEPAGE=()=>{
+
+    CONDITION(sessionStorage.getItem('Direct'),()=>{
+
+        HOMEPAGEROUTER();
+
+    },()=>{
+
+        ABOUTUSPAGEROUTER();
+
+    });
+
+};
+
+const DONATEPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='BACKDONATEPAGE()' class='LeftIcon' src='${WHITEBACKICON}'/>
+        
+            <p class='RightText'>Donate</p>
+
+        </header>
+
+        <div id='SectionDiv' class='RelativeDiv'>
+
+            <br>
+
+            <h1>Donation Event</h1>
+
+            <br>
+
+            <p class='LeftText'>Elite Robust Ontology is Conducting Donations For the Cloud Native Platform,Join Us to Make the Developers experience seamless and Intergration Better of Servces to Your Platform For Free.</p>
+            
+            <br>
+            
+            <p>Enter Amount From 1 dollar</p>
+
+            <input class='RoundInput' type='tel' placeholder='Enter Amount From 1 Dollar'/>
+
+            <button class='SendMessage'>Donate</button>
+
+        </div>
+        
+    `);
+
+    const DONATEAMOUNT=NAMING('.RoundInput');
+
+    const SEND=NAMING('.SendMessage');
+
+    FUNCTIONED(DONATEAMOUNT,'input',()=>{
+
+        DOLLAREXCHANGE('UGX',DONATEAMOUNT.value,(data)=>{
+
+            CONDITION(data < 1,()=>{
+
+                TOAST('Donate Mininium is 1 USD');
+
+                DELETEDATA('','AmountDonated');
+
+            },()=>{
+
+                STOREDATA('','AmountDonated',data);
+
+            });
+
+        });
+
+    });
+
+    FUNCTIONED(SEND,'click',()=>{
+
+        CONDITION(DONATEAMOUNT.value,()=>{
+
+            CONDITION(DONATEAMOUNT.value >=1,()=>{
+    
+                TOAST('Please Wait');
+                        
+                ELITEPAY('Elite','eroinnovations9@gmail.com',sessionStorage.getItem('AmountDonated'),'Donation','https://eroinnovations.site/AfterPay.html',new Date(),'https://eroinnovations.site',(dataLink)=>{
+                            
+                    WEBSITE(dataLink);
+                            
+                });
+                        
+            },()=>{
+                        
+                TOAST('Donate Mininium is 1 USD');
+
+            });
+    
+        },()=>{
+    
+            TOAST('Enter Donation Amount');
+    
+        });
+
+    });
 
 };

@@ -1,51 +1,55 @@
-.AppName{
-    font-size: 30px;
-    color: red;
-}
-
-.LoginButton{
-    background: forestgreen;
-}
-
-#OptionsHolder{
-    display: inline-flex;
-}
-
-.OptionButtons{
-    width: 45%;
-    margin: auto;
-    border: 1px solid #cdcdcd50;
-}
-
-.FooterImageDiv{
-    position: relative;
-    background: transparent;
-    width: 30%;
-    height: 40px;
-    display: inline-block;
-}
-
-.RoundFooter{
-    background: #333333;
-    border-radius: 10px;
-}
-
-.HomeDiv{
-   background: transparent;
-   overflow-y: auto;
-}
-
-.TrendingMovie{
-    position: relative;
-    width: 98%;
-    height: 200px;
-    background: transparent;
-    border: 1px solid #cdcdcd20;
+.AppLogo{
+    width: 95%;
+    height: 150px;
     margin-top: 2%;
     border-radius: 5px;
 }
 
+.ParthnersDiv{
+    position: relative;
+    height: auto;
+    background: transparent;
+}
+
+.ParthnerMiniDivs{
+    position: relative;
+    width: 45%;
+    height: 200px;
+    display: inline-table;
+    margin: 2%;
+    border-radius: 10px;
+}
+
+.ParthnerFooter{
+    background: #00000080;
+}
+
+#SectionDiv{
+    top: 50px;
+}
+
+.ServicesSection{
+    background: forestgreen;
+    padding: 2%;
+}
+
+.SendMessage{
+    background: forestgreen;
+}
+
 .InlineButton{
-    width: 98%;
-    border: 1px solid #cdcdcd20;
+    background: forestgreen;
+}
+
+.DonateSection{
+    color: orange;
+}
+
+.DirectDonate{
+    position: fixed;
+    background: forestgreen;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    bottom: 50px;
 }
