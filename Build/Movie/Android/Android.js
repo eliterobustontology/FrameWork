@@ -484,7 +484,7 @@ const CONTACTUSPAGE=()=>{
 
         <div class='HeaderDiv'>
 
-            <button class='InlineButton'>
+            <button id='EmailUs' class='InlineButton'>
 
                 <p class='LeftText'>Email Us</p>
 
@@ -492,7 +492,7 @@ const CONTACTUSPAGE=()=>{
 
             </button>
 
-            <button class='InlineButton'>
+            <button id='CallUs' class='InlineButton'>
 
                 <p class='LeftText'>Call Us</p>
 
@@ -500,7 +500,7 @@ const CONTACTUSPAGE=()=>{
 
             </button>
 
-            <button class='InlineButton'>
+            <button id='WebSite' class='InlineButton'>
 
                 <p class='LeftText'>Visit Our Site</p>
 
@@ -515,6 +515,24 @@ const CONTACTUSPAGE=()=>{
         </div>
 
     `);
+
+    const EmailUs=NAMING('#EmailUs');
+    
+    CLICK(EmailUs,()=>{
+        EMAIL('eroinnovations9@gmail.com');
+    });
+
+    const CallUs=NAMING('#CallUs');
+    
+    CLICK(CallUs,()=>{
+        Call('+256768058124');
+    });
+
+    const WebSite=NAMING('#WebSite');
+    
+    CLICK(WebSite,()=>{
+        WEBSITE('https://eroinnovations.site');
+    });
 
 };
 
