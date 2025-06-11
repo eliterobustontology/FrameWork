@@ -44,8 +44,6 @@ const HOMEPAGE=()=>{
             
             </div>
 
-            <button onclick='DIRECTDONATE()' class='SendMessage'>Support Us</button>
-
             <br><br>
 
             <h1>Welcome</h1>
@@ -312,8 +310,6 @@ const ABOUTUSPAGE=()=>{
 
             <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
         
-            <h1 onclick='DONATEPAGEROUTER()' class='DonateSection'>Donate</h1>
-
             <p class='RightText'>About Us</p>
 
         </header>
