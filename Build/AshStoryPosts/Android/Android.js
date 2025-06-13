@@ -16,12 +16,10 @@ const DATADOWNLOAD=()=>{
 
         const Data={
             "Name":"Project",
-            "Data":data
+            "data":data
         };
            
         STOREINDEXED('Projects','Projects',Data,(data)=>{
-
-            HOMEPAGEROUTER();
 
         });
 
@@ -50,6 +48,22 @@ const HOMEPAGE=()=>{
         </header>
 
         <div class='HeaderDiv' >
+
+            <br><br>
+
+            <div class='TableView' onclick='ALLPROJECTPAGEROUTER()'>
+
+                <br><br><br>
+
+                <img class='Icon' src='${WHITEFOLDERICON}'/>
+
+                <footer>
+                
+                    <h1>All Projects</h1>
+
+                </footer>
+            
+            </div>
 
             <div class='TableView' onclick='CREATEPROJECTROUTER()'>
 
@@ -115,11 +129,13 @@ const HOMEPAGE=()=>{
 
 const CREATEPROJECTROUTER=()=>{
 
-    ROUTE(' ',CREATEPROJECT,'HOMEPAGE');
+    ROUTE(' ',CREATEPROJECTPAGE,'HOMEPAGE');
 
 };
 
-const CREATEPROJECT=()=>{
+const CREATEPROJECTPAGE=()=>{
+
+    DELETEDATA('','Imaged');
 
     DISPLAY('',`
 
@@ -193,7 +209,49 @@ const CREATEPROJECT=()=>{
                 CONDITION(Story.value,()=>{
 
                     CONDITION(sessionStorage.getItem('Imaged'),()=>{
-                        
+
+                        CONDITION(navigator.onLine,()=>{
+
+                            DISPLAY(SendButton,'..Please Wait...');
+
+                            const HEADERS=['Name','Image','Header','Story','SubTitle','Approved','FullTitle','Date'];
+
+                            const INFO=[Title.value,sessionStorage.getItem('Imaged'),'',Story.value,SubTitle.value,'Approved','',new Date()];
+
+                            INSERTDATA(API,'Projects',HEADERS,INFO,(resdata)=>{
+
+                                GETDATA(API,'Projects',(data)=>{
+
+                                    const Data={
+                                        "Name":"Project",
+                                        "data":data
+                                    };
+                                        
+                                    STOREINDEXED('Projects','Projects',Data,(data)=>{
+
+                                       ALLPROJECTPAGEROUTER();
+
+                                    });
+
+                                },(data)=>{
+
+                                        console.log(data);
+
+                                });
+
+                            },(error)=>{
+
+                                TOAST('Failed to Post Updates');
+
+                            });
+                            
+                        },()=>{
+
+                            DISPLAY(SendButton,'Create Project');
+
+                            TOAST('Check Your Internet');
+
+                        });
 
                     },()=>{
 
@@ -218,6 +276,62 @@ const CREATEPROJECT=()=>{
             TOAST('Enter Title');
 
         });
+
+    });
+
+};
+
+const ALLPROJECTPAGEROUTER=()=>{
+
+    ROUTE(' ',ALLPROJECTSPAGE,'HOMEPAGE');
+
+};
+
+const ALLPROJECTSPAGE=()=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+
+            <h1 class='RightText'>My Projects</h1>
+
+        </header>
+
+        <div class='HeaderDiv'>
+
+            <div id='smallLoader' class="spinner"></div>
+        
+        </div>
+        
+    `);
+
+    const HeaderDiv=NAMING('.HeaderDiv');
+
+    const smallLoader=NAMING('#smallLoader');
+
+    GETINDEXEDDATA('Projects','Projects',(data)=>{
+
+        STYLED(smallLoader,'display','none');
+
+        CREATEELEMENT(HeaderDiv,'div','TableView',(ELEMENT)=>{
+
+            DISPLAY(ELEMENT,`
+
+                <img src='${data.Image}'/>
+
+                <footer class='ProjectFooter'>
+
+                    <p>${data.Name}</p>
+                
+                </footer>
+            
+            `);
+        
+        })
+
+        console.log(data);
 
     });
 
