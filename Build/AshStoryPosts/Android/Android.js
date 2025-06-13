@@ -120,6 +120,20 @@ const HOMEPAGE=()=>{
                 </footer>
             
             </div>
+
+            <div class='TableView' onclick='RELOAD()'>
+
+                <br><br><br>
+
+                <img class='Icon' src='${WHITERETRYICON}'/>
+
+                <footer>
+                
+                    <h1>Sync App</h1>
+
+                </footer>
+            
+            </div>
         
         </div>
         
