@@ -102,6 +102,45 @@ export const CLOUDCONNECTION=()=>{
 
                 };
 
+                if (localStorage.getItem('Environment') === 'Desktop') {
+    
+                    CONNECTION(element.DesktopDesign,'PROJECT');
+
+                    CONNECTION(element.DesktopFunctions,'PROJECTSTYLES');
+
+                    const requiredKeys = [
+                        'FUNCTIONS',
+                        'NOVA',
+                        'PLUGINS',
+                        'APIS',
+                        'AUTORUN',
+                        'NOVACLASSES',
+                        'NOVACOMPONENTS',
+                        'ASSETS',
+                        'NOVASTYLES'
+                    ];
+
+                    const allKeysPresent = requiredKeys.every(key => localStorage.getItem(key));
+
+                    if (!allKeysPresent) {
+                        console.log('Some Updates Missing');
+                        START();
+                    } else {
+                        console.log('All Updates Recieved');
+                        if (localStorage.getItem('Updates') === 'Approved') {
+                            localStorage.setItem('Updated', new Date().toISOString());
+                        } else {
+                            localStorage.setItem('Updates', 'Approved');
+                            setTimeout(() => {
+                                location.reload();
+                            }, 2000);
+                        };
+                    };
+
+                    return;
+
+                };
+
             };
 
         });
@@ -114,4 +153,4 @@ export const CLOUDCONNECTION=()=>{
     
     });
 
-}
+};
