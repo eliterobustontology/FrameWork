@@ -1,0 +1,29 @@
+.MenuHolder{
+    width: 20%;
+    right: 80%;
+    border-right: 1px solid #cdcdcd50;
+}
+
+.DataCenter{
+    width: 80%;
+    left: 20%;
+    overflow-y: auto;
+}
+
+.InlineButton{
+   border: 1px solid #cdcdcd50; 
+}
+
+#loadingIcon{
+    width: 20px;
+    height: 20px;
+    margin-top: 60%;
+}
+
+.TableView{
+    background: forestgreen;
+}
+
+.ProjectFooter{
+    background: #000000;
+}

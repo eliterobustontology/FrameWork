@@ -1,12 +1,22 @@
+const API='https://docs.google.com/spreadsheets/d/1Utfr1wkoZSRvM9TOKaTxOX6orYE8AuN2mu4dDtQmhFQ/edit?usp=sharing';
+
 const NOVASTART=()=>{
 
     HOMEPAGEROUTER();
+
+    DOWNLOADDATA();
 
 };
 
 const HOMEPAGEROUTER=()=>{
 
     ROUTE('',HOMEPAGE,'HOMEPAGE');
+
+};
+
+const DOWNLOADDATA=()=>{
+
+    STOREINDEXEDDATA(API,'APPMANAGER');
 
 };
 
@@ -62,6 +72,14 @@ const HOMEPAGE=()=>{
             
             </button>
 
+            <button class='InlineButton' onclick='RELOAD()'>
+
+                <p class='LeftText' >Sync</p>
+
+                <img class='RightIcon' src='${WHITERETRYICON}'/>
+            
+            </button>
+
             <footer>
 
                 <p class='LeftText' >Log Out</p>
@@ -74,12 +92,44 @@ const HOMEPAGE=()=>{
 
         <div class='DataCenter'>
 
-            <br><br>
-
-            <p>Data Space</p>
+            <div id='loadingIcon' class="spinner"></div>
         
         </div>
         
     `);
+
+    PROJECTSPAGE();
+
+};
+
+const PROJECTSPAGE=()=>{
+
+    const HOMEDIV=NAMING('.DataCenter');
+
+    const loadingIcon=NAMING('#loadingIcon');
+
+    GETINDEXEDDATA('APPMANAGER','APPMANAGER',(data)=>{
+
+        console.log(data);
+
+        STYLED(loadingIcon,'display','none');
+
+        CREATEELEMENT(HOMEDIV,'div','TableView',(ELEMENT)=>{
+
+            DISPLAY(ELEMENT,`
+
+                <img src='${data.AppIcon||WHITEFOLDERICON}'/>
+
+                <footer class='ProjectFooter'>
+
+                    <p>${data.AppName}</p>
+                
+                </footer>
+                
+            `);
+
+        });
+
+    });
 
 };
