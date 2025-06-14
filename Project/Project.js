@@ -114,11 +114,11 @@ const PROJECTSPAGE=()=>{
 
         STYLED(loadingIcon,'display','none');
 
-        CREATEELEMENT(HOMEDIV,'div','TableView',(ELEMENT)=>{
+        CREATEELEMENT(HOMEDIV,'div','HomeProjectsViews',(ELEMENT)=>{
 
             DISPLAY(ELEMENT,`
 
-                <img src='${data.AppIcon||WHITEFOLDERICON}'/>
+                <img class='ProjectImage' src='${data.AppIcon||WHITEFOLDERICON}'/>
 
                 <footer class='ProjectFooter'>
 
