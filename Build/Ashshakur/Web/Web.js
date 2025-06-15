@@ -31,6 +31,8 @@ const QURBANMAINFIVE='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUN
 
 const NOVASTART=()=>{
 
+    DATADOWNLOADDATA();
+
     DELETEDATA('','ScrollPoint');
 
     APPMODE('#ffffff');
@@ -41,6 +43,12 @@ const NOVASTART=()=>{
 
 };
 
+const DATADOWNLOADDATA=()=>{
+
+    STOREINDEXEDDATA(URL,"Projects");
+
+};
+
 const HOMEPAGEROUTER=()=>{
 
     ROUTE('',HOMEPAGE,'HOMEPAGE');
@@ -48,6 +56,8 @@ const HOMEPAGEROUTER=()=>{
 };
 
 const HOMEPAGE=()=>{
+
+    DATADOWNLOADDATA();
 
     DISPLAY('',`
 
@@ -747,7 +757,7 @@ const PROJECTPAGE=()=>{
 
         <div class='ScrollDiv'>
 
-            <p>...Please Wait...</p>
+            <p class="Please" >...Please Wait...</p>
 
         </div>
 
@@ -755,49 +765,43 @@ const PROJECTPAGE=()=>{
 
     var HOMEDIV=NAMING('.ScrollDiv');
 
-    GETDATA(PROJECTAPI,'Projects',(data)=>{
+    var Please=NAMING(".Please");
 
-        DISPLAY(HOMEDIV,'');
+    GETINDEXEDDATA("Projects","Projects",(datata)=>{
+
+        STYLED(Please,"display","none");
+
+        CREATEELEMENT(HOMEDIV,'div','IbraProject',(ELEMENT)=>{
     
-        REDUX(data,(datata)=>{
+            DISPLAY(ELEMENT,`
     
-            CREATEELEMENT(HOMEDIV,'div','IbraProject',(ELEMENT)=>{
+                <img class='ProjectImage' src='${datata.Image}'/>
     
-                DISPLAY(ELEMENT,`
+                <footer id='ProjectFooter' class='MainFooter'>
     
-                    <img class='ProjectImage' src='${datata.Image}'/>
-    
-                    <footer id='ProjectFooter' class='MainFooter'>
-    
-                        <p class='Message'>${datata.Name}</p>
+                    <p class='Message'>${datata.Name}</p>
                 
-                    </footer>
+                </footer>
                     
-                `);
+            `);
     
-                CLICK(ELEMENT,()=>{
+            CLICK(ELEMENT,()=>{
     
-                    STOREDATA('','ProjectName',datata.Name);
+                STOREDATA('','ProjectName',datata.Name);
     
-                    STOREDATA('','Image',datata.Image);
+                STOREDATA('','Image',datata.Image);
     
-                    STOREDATA('','Title',datata.Header);
+                STOREDATA('','Title',datata.Header);
     
-                    STOREDATA('','SubTitle',datata.SubTitle);
+                STOREDATA('','SubTitle',datata.SubTitle);
     
-                    STOREDATA('','Story',datata.Story);
+                STOREDATA('','Story',datata.Story);
     
-                    ROUTE(' ',SINGLEPROJECTPAGE,'PROJECTPAGE');
-    
-                });
+                ROUTE(' ',SINGLEPROJECTPAGE,'PROJECTPAGE');
     
             });
     
         });
-
-    },(data)=>{
-
-        console.log(data);
 
     });
 
