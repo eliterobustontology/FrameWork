@@ -729,8 +729,6 @@ const PROJECTPAGE=()=>{
 
     BACKPAGE('HOMEPAGE');
 
-    const PROJECTAPI='https://docs.google.com/spreadsheets/d/1x_Nruw60vwcWJKkMUWpNncGzQSoPgHoMP2X8so3eS8I/edit?usp=sharing';
-
     DISPLAY('',`
 
         <header>
@@ -767,7 +765,9 @@ const PROJECTPAGE=()=>{
 
     var Please=NAMING(".Please");
 
-    GETINDEXEDDATA("Projects","Projects",(datata)=>{
+    GETINDEXEDNONDATA("Projects","Projects",(datata)=>{
+
+        console.log(datata);
 
         STYLED(Please,"display","none");
 
