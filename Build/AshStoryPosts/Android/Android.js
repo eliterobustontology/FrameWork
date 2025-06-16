@@ -6,26 +6,17 @@ const NOVASTART=()=>{
 
     HOMEPAGEROUTER();
 
-    DATADOWNLOAD();
+    DATADOWNLOAD(()=>{
+
+    });
 
 };
 
-const DATADOWNLOAD=()=>{
+const DATADOWNLOAD=(Callback)=>{
 
-    GETDATA(API,'Projects',(data)=>{
+    DOWNLOADSAVEINDEX(API,"Projects","Projects",()=>{
 
-        const Data={
-            "Name":"Project",
-            "data":data
-        };
-           
-        STOREINDEXED('Projects','Projects',Data,(data)=>{
-
-        });
-
-    },(data)=>{
-
-        console.log(data);
+        Callback();
 
     });
 
@@ -342,11 +333,221 @@ const ALLPROJECTSPAGE=()=>{
                 </footer>
             
             `);
-        
-        })
 
-        console.log(data);
+            CLICK(ELEMENT,()=>{
+
+                CURRENTPROJECTSPAGE(data);
+
+            });
+        
+        });
 
     });
 
+};
+
+const CURRENTPROJECTSPAGE=(data)=>{
+
+    DISPLAY('',`
+
+        <header>
+
+            <img onclick='HOMEPAGEROUTER()' class='LeftIcon' src='${WHITEBACKICON}'/>
+
+            <h1 class='RightText'>${data.Name}</h1>
+
+        </header>
+
+        <div class='HeaderDiv'>
+
+            <img class="ProjectImagefd" src="${data.Image}"/>
+
+            <button id="ChooseImage" class="UpdateStory">Choose Image</button>
+
+            <button id="UpdateImage" class="UpdateStory">Update Project Image</button>
+
+            <br><br>
+
+            <p>Project Name</p>
+
+            <input id="ProjectName" class="RoundInput" type="text" placeholder="${data.Name}"/>
+
+            <button id="ProjectNameUpdate" class="UpdateStory">Update Project Name </button>
+
+            <br><br><br>
+            
+            <p>Project Sub Title</p>
+
+            <input id="ProjectSubTitle"  class="RoundInput" type="text" placeholder="${data.SubTitle}"/>
+
+            <button id="ProjectSubUpdate" class="UpdateStory">Update Project SubTitle </button>
+
+            <br><br><br>
+
+            <textarea id="ProjectStory" placeholder="${data.Story||"No Story"}" ></textarea>
+
+            <button id="ProjectUpdate" class="UpdateStory">Update Project Story</button>
+
+        </div>
+        
+    `);
+
+    var ChooseImage=NAMING("#ChooseImage");
+
+    var ProjectImagefd=NAMING(".ProjectImagefd");
+
+    var UpdateImage=NAMING("#UpdateImage");
+
+    CLICK(ChooseImage,()=>{
+
+        IMAGEPICKER(ProjectImagefd,(Imager)=>{
+
+            STOREDATA("","Imageee",Imager);
+
+        });
+
+    });
+
+    CLICK(UpdateImage,()=>{
+
+        CONDITION(sessionStorage.getItem("Imageee"),()=>{
+  
+            CONDITION(navigator.onLine,()=>{
+                
+                TOAST("Please Wait");
+
+                const LINK=[data.Name,sessionStorage.getItem("Imageee"),data.Header,data.Story,data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+                UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                    DELETEDATA("","Imageee");
+
+                    TOAST("Project Image Updated");
+
+                    DATADOWNLOAD(()=>{
+        
+                    });
+
+                },(datate)=>{
+
+                    TOAST("Project Image Updating Failed");
+
+                });
+
+            },()=>{
+                TOAST("Check Your Internet.")
+            });
+
+        },()=>{
+            TOAST("No Image Selected.")
+        });
+
+    });
+
+    var ProjectUpdate=NAMING("#ProjectUpdate");
+    var ProjectName=NAMING("#ProjectName");
+    var ProjectSubTitle=NAMING("#ProjectSubTitle");
+    var ProjectStory=NAMING("#ProjectStory");
+    var ProjectNameUpdate=NAMING("#ProjectNameUpdate");
+
+    var ProjectSubUpdate=NAMING("#ProjectSubUpdate");
+
+    var ProjectName=NAMING("#ProjectName");
+
+    CLICK(ProjectNameUpdate,()=>{
+
+        if (ProjectName.value) {
+
+            TOAST("Please Wait");
+            
+            const LINK=[ProjectName.value||data.Name,data.Image,data.Header,data.Story,data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+            UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                DELETEDATA("","Imageee");
+
+                TOAST("Project  Updated");
+
+                DATADOWNLOAD(()=>{
+        
+                });
+
+            },(datate)=>{
+
+                TOAST("Project Updating Failed");
+
+            });
+
+        } else {
+
+            TOAST("Add Project Name");
+            
+        };
+
+    });
+
+    CLICK(ProjectUpdate,()=>{
+
+        if (ProjectStory.value) {
+
+            TOAST("Please Wait");
+            
+            const LINK=[data.Name,data.Image,data.Header,ProjectStory.value||data.Story,data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+            UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                DELETEDATA("","Imageee");
+
+                TOAST("Project  Updated");
+
+                DATADOWNLOAD(()=>{
+        
+                });
+
+            },(datate)=>{
+
+                TOAST("Project Updating Failed");
+
+            });
+
+        } else {
+
+            TOAST("Add Story");
+            
+        };
+
+    });
+
+    CLICK(ProjectSubUpdate,()=>{
+
+        if (ProjectSubTitle.value) {
+
+            TOAST("Please Wait");
+            
+            const LINK=[data.Name,data.Image,data.Header,data.Story,ProjectSubTitle.value||data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+            UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                DELETEDATA("","Imageee");
+
+                TOAST("Project  Updated");
+
+                DATADOWNLOAD(()=>{
+        
+                });
+
+            },(datate)=>{
+
+                TOAST("Project Updating Failed");
+
+            });
+
+        } else {
+
+            TOAST("Add SubTitle");
+            
+        };
+
+    });
+    
 };
