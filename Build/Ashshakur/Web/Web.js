@@ -767,8 +767,6 @@ const PROJECTPAGE=()=>{
 
     GETINDEXEDNONDATA("Projects","Projects",(datata)=>{
 
-        console.log(datata);
-
         STYLED(Please,"display","none");
 
         CREATEELEMENT(HOMEDIV,'div','IbraProject',(ELEMENT)=>{
