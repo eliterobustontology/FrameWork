@@ -32,7 +32,17 @@ const HOMEPAGE=()=>{
 
         </header>
 
-        <div  class="HeaderDiv"></div>
+        <div  class="HeaderDiv">
+
+            <br>
+
+            <h1>Who We Are?</h1>
+
+            <br>
+
+            <p class='LeftText'>We are A Non government Funded Organisation that is Created and Our Aim is to Help the Communities in need to skip the poverty line and those that are unable to meet daily needs.</p>
+        
+        </div>
         
     `);
 
@@ -128,7 +138,9 @@ const CONTACTUSPAGE=()=>{
 
         </header>
 
-        <div  class="HeaderDiv"></div>
+        <div  class="HeaderDiv">
+        
+        </div>
         
     `);
 
