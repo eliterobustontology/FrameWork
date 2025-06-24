@@ -195,3 +195,23 @@ textarea{
 .HomeDonateSection{
     background: gray;
 }
+
+.StorySpot{
+    top: 0;
+    bottom: 100px;
+    height: auto;
+    overflow-y: auto;
+    background: transparent;
+}
+
+.ProjectInformation{
+    bottom: 0px;
+    height: 100px;
+    top: auto;
+    background: transparent;
+}
+
+#ContactHolded{
+    margin-top: 1%;
+    background: forestgreen;
+}

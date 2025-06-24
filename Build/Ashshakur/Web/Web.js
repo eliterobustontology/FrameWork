@@ -681,7 +681,7 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
 
             <br>
 
-            <div id='ContactHolder' class='TopNav'>
+            <div id='ContactHolded' class='TopNav'>
 
                 <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
 
@@ -690,10 +690,14 @@ const SINGLEPROJECTPAGE=(Name,Story,Image,)=>{
                 <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
 
                 <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
-            
+                
             </div>
 
             <br><br>
+
+            <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+            <br>
 
         </div>
 
@@ -755,13 +759,39 @@ const PROJECTPAGE=()=>{
 
         <div class='ScrollDiv'>
 
-            <p class="Please" >...Please Wait...</p>
+            <div class='StorySpot'>
+
+                <p class="Please" >...Please Wait...</p>
+            
+            </div>
+
+            <div class='ProjectInformation'>
+
+                <div id='ContactHolded' class='TopNav'>
+
+                    <img class='Icon' src='${WHITEINSTAGRAMICON}' onclick='INSTAGRAMUS()' />
+
+                    <img class='Icon' src='${WHITEWHATSAPPICON}' onclick='WHATSAPPUS()' />
+
+                    <img class='Icon' src='${WHITEFACEBOOKICON}' onclick='FACEBOOKUS()' />
+
+                    <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
+                
+                </div>
+
+                <br><br>
+
+                <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+                <br>
+            
+            </div>
 
         </div>
 
     `);
 
-    var HOMEDIV=NAMING('.ScrollDiv');
+    var HOMEDIV=NAMING('.StorySpot');
 
     var Please=NAMING(".Please");
 
@@ -896,6 +926,12 @@ const ABOUTUSPAGE=()=>{
                 <img class='Icon' src='${WHITEGMAILICON}' onclick='EMAILUS()'/>
             
             </div>
+
+            <br><br>
+
+            <p class='PoweringCompany' onclick='POWERUS()'>Powered by Elite Robust Ontology</p>
+
+            <br>
 
             <br><br>
 
