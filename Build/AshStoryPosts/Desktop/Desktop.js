@@ -40,8 +40,45 @@ const HOMEPAGE=()=>{
         
         </div>
 
-        <div class='DataSection' ></div>
+        <div class='DataSection' >
+
+            <div id='DataLoaderDiv' class='spinner'></div>
+        
+        </div>
         
     `);
 
+    PROJECTDATA();
+
 };
+
+const PROJECTDATA=()=>{
+
+    const LOADER=NAMING('#DataLoaderDiv');
+
+     const HeaderDiv=NAMING('.DataSection');
+
+    GETINDEXEDDATA('Projects','Projects',(data)=>{
+
+        STYLED(LOADER,'display','none');
+
+        CREATEELEMENT(HeaderDiv,'div','TableView',(ELEMENT)=>{
+
+            DISPLAY(ELEMENT,`
+
+                <img src='${data.Image}'/>
+
+                <footer class='ProjectFooter'>
+
+                    <p>${data.Name}</p>
+                
+                </footer>
+            
+            `);
+        
+        });
+
+    });
+
+
+}
