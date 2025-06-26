@@ -1,3 +1,19 @@
-body{
+.MenuSection{
     background: orange;
+    width: 30%;
+    margin-left: 0;
+    top: 100px;
+
+}
+
+.DataSection{
+    background: red;
+    width: 70%;
+    margin-left: 30%;
+    top: 100px;
+    overflow-y: auto;
+}
+
+.MenuButtons{
+    background: forestgreen;
 }
