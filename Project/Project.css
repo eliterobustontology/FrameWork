@@ -1,5 +1,5 @@
 .MenuSection{
-    background: orange;
+    background: transparent;
     width: 30%;
     margin-left: 0;
     top: 100px;
@@ -7,7 +7,7 @@
 }
 
 .DataSection{
-    background: red;
+    background: transparent;
     width: 70%;
     margin-left: 30%;
     top: 100px;
