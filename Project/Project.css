@@ -1,72 +1,46 @@
-.MenuSection{
-    background: transparent;
-    width: 30%;
-    margin-left: 0;
-    top: 50px;
-    height: auto;
-
+h1,h2,h3,h4,h5,h6,p{
+    color: #000;
 }
 
-.DataSection{
+.TopCompanyName{
+    margin-top: 1%;
+    top: 10%;
+    left: 40%;
+    color: #ffffff;
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+
+.CompanyName{
+    bottom: 10%;
+    width: 90%;
+    left: 5%;
+    color: #ffffff;
+}
+
+.AppHeader{
+    height: 100px;
+    background: green;
+    display: block;
+}
+
+.SubAppHeader{
     background: transparent;
-    width: 70%;
-    margin-left: 30%;
-    height:auto;
+    position: absolute;
+    top: auto;
+    height: 38px;
     bottom: 0;
-    top: 50px;
-    overflow-y: auto;
-    border-left: 1px solid #cdcdcd50;
 }
 
-.MenuButtons{
-    background: forestgreen;
+.Menusections{
+    color: #ffffff;
 }
 
-#DataLoaderDiv{
+.HeaderDiv{
+    background: transparent;
     top: 100px;
-    height: 50px;
-    width: 50px;
 }
 
-.AddImage{
-    background: teal;
-}
-
-.ProjectImage{
-    width: 95%;
-    height: 300px;
-    border-radius: 5px;
-}
-
-.NewProject{
-    background: forestgreen;
-}
-
-.ProjectedImage{
-    height: 100%;
-    max-height: 300px;
-}
-
-.ProjectImagefd{
-    width: 95%;
-    height: 100%;
-    max-height: 300px;
-}
-
-.UpdateStory{
-    background: forestgreen;
-}
-
-#UpdateImage{
-    background: teal;
-}
-
-.ImageProject{
-    width: 95%;
-    height: 100%;
-    max-height: 300px;
-}
-
-.SendButton{
-    background: forestgreen;
+#SectionText{
+    color: #ffffff;
 }
