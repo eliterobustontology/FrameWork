@@ -68,7 +68,7 @@ const PROJECTDATA=()=>{
 
             DISPLAY(ELEMENT,`
 
-                <img src='${data.Image}'/>
+                <img class='ProjectedImage' src='${data.Image}'/>
 
                 <footer class='ProjectFooter'>
 
