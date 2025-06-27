@@ -140,6 +140,12 @@ const CONTACTUSPAGE=()=>{
 
         <div  class="HeaderDiv">
 
+            <br>
+
+            <h1>Reach Us Today</h1>
+
+            <br>
+
             <button class='ContactButton'>
 
                 <p id='Contacts' class='LeftText'>Whatsapp</p>
