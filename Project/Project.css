@@ -27,3 +27,17 @@
     height: 50px;
     width: 50px;
 }
+
+.AddImage{
+    background: teal;
+}
+
+.ProjectImage{
+    width: 95%;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.NewProject{
+    background: forestgreen;
+}
