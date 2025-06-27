@@ -139,6 +139,30 @@ const CONTACTUSPAGE=()=>{
         </header>
 
         <div  class="HeaderDiv">
+
+            <button class='ContactButton'>
+
+                <p id='Contacts' class='LeftText'>Whatsapp</p>
+
+                <img class='RightIcon' src='${WHITEWHATSAPPICON}'/>
+            
+            </button>
+
+            <button class='ContactButton'>
+
+                <p id='Contacts' class='LeftText'>Instagram</p>
+
+                <img class='RightIcon' src='${WHITEINSTAGRAMICON}'/>
+            
+            </button>
+
+            <button class='ContactButton'>
+
+                <p id='Contacts' class='LeftText'>Call</p>
+
+                <img class='RightIcon' src='${WHITEPHONEICON}'/>
+            
+            </button>
         
         </div>
         
