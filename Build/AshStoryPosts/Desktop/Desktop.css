@@ -46,3 +46,27 @@
     height: 100%;
     max-height: 300px;
 }
+
+.ProjectImagefd{
+    width: 95%;
+    height: 100%;
+    max-height: 300px;
+}
+
+.UpdateStory{
+    background: forestgreen;
+}
+
+#UpdateImage{
+    background: teal;
+}
+
+.ImageProject{
+    width: 95%;
+    height: 100%;
+    max-height: 300px;
+}
+
+.SendButton{
+    background: forestgreen;
+}

@@ -58,7 +58,7 @@ const PROJECTDATA=()=>{
 
     const LOADER=NAMING('#DataLoaderDiv');
 
-     const HeaderDiv=NAMING('.DataSection');
+    const HeaderDiv=NAMING('.DataSection');
 
     GETINDEXEDDATA('Projects','Projects',(data)=>{
 
@@ -77,15 +77,234 @@ const PROJECTDATA=()=>{
                 </footer>
             
             `);
+
+            CLICK(ELEMENT,()=>{
+
+                CURRENTSTORYPAGE(data,HeaderDiv);
+
+            });
         
         });
 
     });
 
+};
+
+const CURRENTSTORYPAGE=(data,Holder)=>{
+
+    DISPLAY(Holder,`
+
+        <br>
+
+        <img class="ProjectImagefd" src="${data.Image}"/>
+
+        <button id="ChooseImage" class="UpdateStory">Choose Image</button>
+
+        <button id="UpdateImage" class="UpdateStory">Update Project Image</button>
+
+        <br><br>
+
+        <p>Project Name</p>
+
+        <input id="ProjectName" class="RoundInput" type="text" placeholder="${data.Name}"/>
+
+        <button id="ProjectNameUpdate" class="UpdateStory">Update Project Name </button>
+
+        <br><br><br>
+            
+        <p>Project Sub Title</p>
+
+        <input id="ProjectSubTitle"  class="RoundInput" type="text" placeholder="${data.SubTitle}"/>
+
+        <button id="ProjectSubUpdate" class="UpdateStory">Update Project SubTitle </button>
+
+        <br><br><br>
+
+        <textarea id="ProjectStory" placeholder="${data.Story||"No Story"}" ></textarea>
+
+        <button id="ProjectUpdate" class="UpdateStory">Update Project Story</button>
+       
+    `);
+
+        var ChooseImage=NAMING("#ChooseImage");
+
+    var ProjectImagefd=NAMING(".ProjectImagefd");
+
+    var UpdateImage=NAMING("#UpdateImage");
+
+    CLICK(ChooseImage,()=>{
+
+        IMAGEPICKER(ProjectImagefd,(Imager)=>{
+
+            STOREDATA("","Imageee",Imager);
+
+        });
+
+    });
+
+    CLICK(UpdateImage,()=>{
+
+        CONDITION(sessionStorage.getItem("Imageee"),()=>{
+  
+            CONDITION(navigator.onLine,()=>{
+                
+                TOAST("Please Wait");
+
+                const LINK=[data.Name,sessionStorage.getItem("Imageee"),data.Header,data.Story,data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+                UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                    DATADOWNLOAD(()=>{
+        
+                    });
+
+                    DELETEDATA("","Imageee");
+
+                    TOAST("Project Image Updated");
+
+                    HIDER(1000,()=>{
+                        HOMEPAGE();
+                    });
+
+                },(datate)=>{
+
+                    TOAST("Project Image Updating Failed");
+
+                });
+
+            },()=>{
+                TOAST("Check Your Internet.")
+            });
+
+        },()=>{
+            TOAST("No Image Selected.")
+        });
+
+    });
+
+    var ProjectUpdate=NAMING("#ProjectUpdate");
+    var ProjectName=NAMING("#ProjectName");
+    var ProjectSubTitle=NAMING("#ProjectSubTitle");
+    var ProjectStory=NAMING("#ProjectStory");
+    var ProjectNameUpdate=NAMING("#ProjectNameUpdate");
+
+    var ProjectSubUpdate=NAMING("#ProjectSubUpdate");
+
+    var ProjectName=NAMING("#ProjectName");
+
+    CLICK(ProjectNameUpdate,()=>{
+
+        if (ProjectName.value) {
+
+            TOAST("Please Wait");
+            
+            const LINK=[ProjectName.value||data.Name,data.Image,data.Header,data.Story,data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+            UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                DATADOWNLOAD(()=>{
+        
+                });
+
+                DELETEDATA("","Imageee");
+
+                TOAST("Project  Updated");
+
+                HIDER(1000,()=>{
+                        HOMEPAGE();
+                });
+
+            },(datate)=>{
+
+                TOAST("Project Updating Failed");
+
+            });
+
+        } else {
+
+            TOAST("Add Project Name");
+            
+        };
+
+    });
+
+    CLICK(ProjectUpdate,()=>{
+
+        if (ProjectStory.value) {
+
+            TOAST("Please Wait");
+            
+            const LINK=[data.Name,data.Image,data.Header,ProjectStory.value||data.Story,data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+            UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                DATADOWNLOAD(()=>{
+        
+                });
+
+                DELETEDATA("","Imageee");
+
+                TOAST("Project  Updated");
+
+                HIDER(1000,()=>{
+                    HOMEPAGE();
+                });
+
+            },(datate)=>{
+
+                TOAST("Project Updating Failed");
+
+            });
+
+        } else {
+
+            TOAST("Add Story");
+            
+        };
+
+    });
+
+    CLICK(ProjectSubUpdate,()=>{
+
+        if (ProjectSubTitle.value) {
+
+            TOAST("Please Wait");
+            
+            const LINK=[data.Name,data.Image,data.Header,data.Story,ProjectSubTitle.value||data.SubTitle,data.Approved,data.FullTitle,new Date()];
+                
+            UPDATEDATA(API,"Projects",data.ID,LINK,(datate)=>{
+
+                DATADOWNLOAD(()=>{
+        
+                });
+
+                DELETEDATA("","Imageee");
+
+                TOAST("Project  Updated");
+
+                HIDER(1000,()=>{
+                    HOMEPAGE();
+                });
+
+            },(datate)=>{
+
+                TOAST("Project Updating Failed");
+
+            });
+
+        } else {
+
+            TOAST("Add SubTitle");
+            
+        };
+
+    });
 
 };
 
 const CREATEPROJECTPAGE=()=>{
+
+    DELETEDATA('','Imaged');
 
     const HeaderDiv=NAMING('.DataSection');
 
@@ -93,36 +312,130 @@ const CREATEPROJECTPAGE=()=>{
 
         <br>
 
-        <h1>CREATE NEW PROJECT</h1>
+        <h1 class='LeftText'>Project Title</h1>
 
-        <br>
+        <input type='text' class='RoundInput'  id='Title' />
 
-        <h1 class='LeftText'>Project Name</h1>
+        <br><br>
 
-        <input class='RoundInput' type='text'/>
+        <h1 class='LeftText'>Project Sub Title</h1>
 
-        <br>
+        <input type='text' class='RoundInput' id='SubTitle' />
 
-        <h1 class='LeftText'>Project Sub Name</h1>
-
-        <input class='RoundInput' type='text'/>
-
-        <br>
+        <br><br>
 
         <h1 class='LeftText'>Project Story</h1>
 
-        <textarea></textarea>
+        <textarea id='Story'></textarea>
 
-        <br>
+        <br><br>
 
         <h1 class='LeftText'>Project Image</h1>
 
-        <button class='AddImage'>Add Image</button>
+        <button class='ImageButton'>Select Image</button>
 
-        <img class='ProjectImage' src='${MAINLOGO}'/>
+        <img class='ImageProject' src='${MAINLOGO}'/>
 
-        <button class='NewProject'>Upload New Project</button>
+        <button class='SendButton'>Create Project</button>
         
     `);
+
+    const ImageButton=NAMING('.ImageButton');
+    const ImageProject=NAMING('.ImageProject');
+
+    const Title=NAMING('#Title');
+    const SubTitle=NAMING('#SubTitle');
+    const Story=NAMING('#Story');
+
+    const SendButton=NAMING('.SendButton');
+
+    CLICK(ImageButton,()=>{
+
+        IMAGEPICKER(ImageProject,(ImageData)=>{
+
+            STOREDATA('','Imaged',ImageData);
+
+        });
+
+    });
+
+    CLICK(SendButton,()=>{
+
+        CONDITION(Title.value,()=>{
+
+            CONDITION(SubTitle.value,()=>{
+
+                CONDITION(Story.value,()=>{
+
+                    CONDITION(sessionStorage.getItem('Imaged'),()=>{
+
+                        CONDITION(navigator.onLine,()=>{
+
+                            DISPLAY(SendButton,'..Please Wait...');
+
+                            const HEADERS=['Name','Image','Header','Story','SubTitle','Approved','FullTitle','Date'];
+
+                            const INFO=[Title.value,sessionStorage.getItem('Imaged'),'',Story.value,SubTitle.value,'Approved','',new Date()];
+
+                            INSERTDATA(API,'Projects',HEADERS,INFO,(resdata)=>{
+
+                                GETDATA(API,'Projects',(data)=>{
+
+                                    const Data={
+                                        "Name":"Project",
+                                        "data":data
+                                    };
+                                        
+                                    STOREINDEXED('Projects','Projects',Data,(data)=>{
+
+                                       ALLPROJECTPAGEROUTER();
+
+                                    });
+
+                                },(data)=>{
+
+                                        console.log(data);
+
+                                });
+
+                            },(error)=>{
+
+                                TOAST('Failed to Post Updates');
+
+                            });
+                            
+                        },()=>{
+
+                            DISPLAY(SendButton,'Create Project');
+
+                            TOAST('Check Your Internet');
+
+                        });
+
+                    },()=>{
+
+                        TOAST('Add Project Image');
+
+                    });
+
+                },()=>{
+
+                    TOAST('Enter Story');
+
+                });
+
+            },()=>{
+
+                TOAST('Enter Subtitle');
+
+            });
+
+        },()=>{
+
+            TOAST('Enter Title');
+
+        });
+
+    });
 
 };
