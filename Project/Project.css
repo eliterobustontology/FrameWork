@@ -1,55 +1,55 @@
-h1,h2,h3,h4,h5,h6,p{
-    color: #000;
+.AppLogo{
+    width: 95%;
+    height: 150px;
+    margin-top: 2%;
+    border-radius: 5px;
 }
 
-.TopCompanyName{
-    margin-top: 1%;
-    top: 10%;
-    left: 40%;
-    color: #ffffff;
-    margin-bottom: 5%;
-    font-size: 25px;
-}
-
-.CompanyName{
-    bottom: 10%;
-    width: 90%;
-    left: 5%;
-    color: #ffffff;
-}
-
-.AppHeader{
-    height: 100px;
-    background: green;
-    display: block;
-}
-
-.SubAppHeader{
+.ParthnersDiv{
+    position: relative;
+    height: auto;
     background: transparent;
-    position: absolute;
-    top: auto;
-    height: 38px;
-    bottom: 0;
 }
 
-.Menusections{
-    color: #ffffff;
+.ParthnerMiniDivs{
+    position: relative;
+    width: 45%;
+    height: 200px;
+    display: inline-table;
+    margin: 2%;
+    border-radius: 10px;
 }
 
-.HeaderDiv{
-    background: transparent;
-    top: 100px;
+.ParthnerFooter{
+    background: #00000080;
 }
 
-#SectionText{
-    color: #ffffff;
+#SectionDiv{
+    top: 50px;
 }
 
-.ContactButton{
+.ServicesSection{
     background: forestgreen;
-    display: inline-flex;
+    padding: 2%;
 }
 
-#Contacts{
-    color: #ffffff;
+.SendMessage{
+    background: forestgreen;
+}
+
+.InlineButton{
+    background: forestgreen;
+}
+
+.DonateSection{
+    color: orange;
+}
+
+.DirectDonate{
+    position: fixed;
+    background: forestgreen;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    bottom: 50px;
 }
