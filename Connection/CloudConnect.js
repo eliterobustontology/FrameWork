@@ -26,9 +26,9 @@ export const CLOUDCONNECTION=()=>{
 
                 if (localStorage.getItem('Environment') === 'Production') {
     
-                    CONNECTION(element.AndroidDesign,'PROJECT');
+                    CONNECTION("https://eliterobustontology.github.io/FrameWork/Build/"+element.AndroidDesign,'PROJECT');
 
-                    CONNECTION(element.AndroidFunctions,'PROJECTSTYLES');
+                    CONNECTION("https://eliterobustontology.github.io/FrameWork/Build/"+element.AndroidFunctions,'PROJECTSTYLES');
 
                     const requiredKeys = [
                         'FUNCTIONS',
@@ -65,9 +65,9 @@ export const CLOUDCONNECTION=()=>{
 
                 if (localStorage.getItem('Environment') === 'Web') {
     
-                    CONNECTION(element.WebDesign,'PROJECT');
+                    CONNECTION("https://eliterobustontology.github.io/FrameWork/Build/"+element.WebDesign,'PROJECT');
 
-                    CONNECTION(element.WebFunctions,'PROJECTSTYLES');
+                    CONNECTION("https://eliterobustontology.github.io/FrameWork/Build/"+element.WebFunctions,'PROJECTSTYLES');
 
                     const requiredKeys = [
                         'FUNCTIONS',
@@ -104,9 +104,9 @@ export const CLOUDCONNECTION=()=>{
 
                 if (localStorage.getItem('Environment') === 'Desktop') {
     
-                    CONNECTION(element.DesktopDesign,'PROJECT');
+                    CONNECTION("https://eliterobustontology.github.io/FrameWork/Build/"+element.DesktopDesign,'PROJECT');
 
-                    CONNECTION(element.DesktopFunctions,'PROJECTSTYLES');
+                    CONNECTION("https://eliterobustontology.github.io/FrameWork/Build/"+element.DesktopFunctions,'PROJECTSTYLES');
 
                     const requiredKeys = [
                         'FUNCTIONS',
