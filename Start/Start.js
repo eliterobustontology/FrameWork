@@ -23,13 +23,13 @@ export const START=()=>{
             }, 2000); 
         };
     } else {
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Styles/Styles.css','NOVASTYLES');
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Styles/Classes.css','NOVACLASSES');
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Styles/Components.css','NOVACOMPONENTS');
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Functions/Functions.js','FUNCTIONS');
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Functions/Plugins.js','PLUGINS');
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Functions/Assets.js','ASSETS');
-        CONNECTION('https://eroinnovations.github.io/FrameWork/Library/Functions/Connection.js','APIS');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Styles/Styles.css','NOVASTYLES');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Styles/Classes.css','NOVACLASSES');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Styles/Components.css','NOVACOMPONENTS');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Functions/Functions.js','FUNCTIONS');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Functions/Plugins.js','PLUGINS');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Functions/Assets.js','ASSETS');
+        CONNECTION('https://eliterobustontology.github.io/FrameWork/Library/Functions/Connection.js','APIS');
         CLOUDCONNECTION();   
     };
 };
